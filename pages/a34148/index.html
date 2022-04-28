@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react18 更新特性 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.2d4fb2e4.js" as="script"><link rel="preload" href="/assets/js/2.42c531b5.js" as="script"><link rel="preload" href="/assets/js/19.592e1c03.js" as="script"><link rel="prefetch" href="/assets/js/10.6bd1dedd.js"><link rel="prefetch" href="/assets/js/11.e39f5a55.js"><link rel="prefetch" href="/assets/js/12.d4cb117f.js"><link rel="prefetch" href="/assets/js/13.ba9c1d24.js"><link rel="prefetch" href="/assets/js/14.e9e9e4ec.js"><link rel="prefetch" href="/assets/js/15.524254ef.js"><link rel="prefetch" href="/assets/js/16.254ebcef.js"><link rel="prefetch" href="/assets/js/17.ded59a43.js"><link rel="prefetch" href="/assets/js/18.0b81d54e.js"><link rel="prefetch" href="/assets/js/20.792946e5.js"><link rel="prefetch" href="/assets/js/21.d1dffd8c.js"><link rel="prefetch" href="/assets/js/22.8c007096.js"><link rel="prefetch" href="/assets/js/23.422627e5.js"><link rel="prefetch" href="/assets/js/24.3f634c2c.js"><link rel="prefetch" href="/assets/js/25.b07b8e7d.js"><link rel="prefetch" href="/assets/js/26.f6b7fefa.js"><link rel="prefetch" href="/assets/js/27.bb30ded1.js"><link rel="prefetch" href="/assets/js/28.f599aca0.js"><link rel="prefetch" href="/assets/js/29.c4a8040d.js"><link rel="prefetch" href="/assets/js/3.66c8ff97.js"><link rel="prefetch" href="/assets/js/30.3c14c8d9.js"><link rel="prefetch" href="/assets/js/31.c45ece3b.js"><link rel="prefetch" href="/assets/js/32.6eb1b4b4.js"><link rel="prefetch" href="/assets/js/33.85a788ce.js"><link rel="prefetch" href="/assets/js/34.240aef83.js"><link rel="prefetch" href="/assets/js/35.c7f8894d.js"><link rel="prefetch" href="/assets/js/36.54051003.js"><link rel="prefetch" href="/assets/js/37.3f705fe9.js"><link rel="prefetch" href="/assets/js/38.3cbf1a17.js"><link rel="prefetch" href="/assets/js/39.188ebc83.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.165020ba.js"><link rel="prefetch" href="/assets/js/41.a40ec333.js"><link rel="prefetch" href="/assets/js/42.c4ace19d.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/6.aea33451.js"><link rel="prefetch" href="/assets/js/7.0ac51d9c.js"><link rel="prefetch" href="/assets/js/8.9f478d04.js"><link rel="prefetch" href="/assets/js/9.9aca80aa.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span> react更新特性</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/a34148/" aria-current="page" class="active sidebar-link">react18 更新特性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/c4a159/" class="sidebar-link">react 17 更新特性</a></li><li><a href="/pages/e4d971/" class="sidebar-link">react 16 更新特性</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react进阶</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E3%80%8Areact%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-0c557b5e>《react》笔记</a></li><li data-v-0c557b5e><a href="/categories/?category=%20react%E6%9B%B4%E6%96%B0%E7%89%B9%E6%80%A7" title="分类" data-v-0c557b5e> react更新特性</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-04-19</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">react18 更新特性<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="_01-automatic-batching-自动更新"><a href="#_01-automatic-batching-自动更新" class="header-anchor">#</a> 01. Automatic Batching（自动更新）</h3> <ul><li>自动批量更新state，减少渲染次数。react的batching 是将多个状态合并成一次重新渲染，如下，组件只会在handleClick被调用后，执行一次渲染。</li></ul> <p>生效范围：</p> <table><thead><tr><th style="text-align:center;">React18之前</th> <th style="text-align:center;">React18以后</th></tr></thead> <tbody><tr><td style="text-align:center;">react event handler</td> <td style="text-align:center;">react event handler</td></tr> <tr><td style="text-align:center;"></td> <td style="text-align:center;">Promise</td></tr> <tr><td style="text-align:center;"></td> <td style="text-align:center;">setTimeout</td></tr> <tr><td style="text-align:center;"></td> <td style="text-align:center;">native event handler</td></tr> <tr><td style="text-align:center;"></td> <td style="text-align:center;">...</td></tr></tbody></table> <div class="language- extra-class"><pre class="language-text"><code>import React, { useState } from 'react'
+export default function Index() {
+    const [count, setCount] = useState(0);
+    const [clicked, setClicked] = useState(0);
+    const handleClick = () =&gt;{
+        setClicked(clicked+1)
+        setCount(count+1)
+    }
+    // 执行两次操作
+    const handleClick = () =&gt;{
+      setTimeout(() =&gt; {
+          setClicked(clicked+1)
+          setCount(count+1)
+      },0)
+    }
+    return (
+        &lt;div&gt;
+            &lt;button onClick={handleClick}&gt;点击&lt;/button&gt;
+            &lt;div&gt;
+                count: {count}
+                clicked: {clicked}
+            &lt;/div&gt;
+        &lt;/div&gt;
+    )
+}
+
+</code></pre></div><ul><li>不同上下文中，调用多个状态更新，例如在promise，回调或者定时器中，react就不会进行batching操作，不会将两次更新合二为一，会执行两次更新，但实质上 我们可能只需要一次。在react 18中，所有这些用例都会被覆盖，同时会批量更新状态，无论上下文如何，都会自动更新。 这个与unstable_batchedUpdates行为一致 ，react会默认帮我们完成这个操作。</li> <li>如果不希望进行batch更新操作，可以使用flushSync,它将在每次运行完我们传递给它的函数后，重新渲染组件，当我们按照下面实例方式编写，组件会被渲染两次。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import { flushSync } from 'react-dom'
+
+    const handleClick = () =&gt;{
+      flushSync(() =&gt; {
+          setClicked(clicked+1)
+      },0)
+            flushSync(() =&gt; {
+          setCount(count+1)
+      },0)
+    }
+</code></pre></div><h3 id="_02-concurrent-mode-并发渲染"><a href="#_02-concurrent-mode-并发渲染" class="header-anchor">#</a> 02. Concurrent Mode(并发渲染)</h3> <ul><li>渲染模型的变化</li></ul> <p>react18之前版本的渲染模型是线性的， 渲染都是一个接着一个被触发，并且还要被触发了就无法终止 。</p> <p>react18以后，渲染被分了优先级，开发者决定哪部分渲染是低优先级的，可以被暂定，终中断的，哪部分的渲染是高优先级的，需要在主线程，也就是不可被中断的 react会在内部调度，来保证并发模式下UI的一致性，这样的话，即使有大型渲染任务也不会被卡住UI，可以有更高的用户体验</p> <ul><li>渲染可以被中断，继续，终止的</li> <li>渲染可以在后台进行</li> <li>渲染可以有优先级</li> <li>不是新功能，而是一种新的底层机制</li></ul> <p><img src="/images/react/concurrent.png" alt=""></p> <h3 id="_03-transitions-过渡"><a href="#_03-transitions-过渡" class="header-anchor">#</a> 03. Transitions（过渡）</h3> <ul><li>指定渲染优先级</li></ul> <p>Transitions（过渡）告诉react更新的优先级，在Concurrent模式上建立的
+<img src="/images/react/transitions.png" alt=""></p> <h4 id="transitionsapi"><a href="#transitionsapi" class="header-anchor">#</a> TransitionsAPI</h4> <p>startTransition 或者hook 中useTransition</p> <div class="language- extra-class"><pre class="language-text"><code>import { startTransition, useTransition } from 'react';
+// 紧急状态
+setInputValue(value)
+startTransition(() =&gt; {
+  setSearchQuery(value)
+})
+
+// hook
+
+const [isPending, startTransition] = useTransition();
+// isPending 告知我们这个次优先级的渲染是否在等待中，如果需要标记某些渲染是低优先级的，可以用上述的两个API把state更新操作包裹起来，这样使react内部明确渲染的调度逻辑 
+</code></pre></div><p>场景：优先响应input的渲染，其次响应列表渲染
+我们在搜索输入时更新，我们会期望他的值随着我们的输入变化而变化，而当我们输入时，搜索结果可能在1s内出现，这时我们将输入搜索的内容部分标记为紧急更新，而元素过滤的部分被标记为次要，也就是我们理解的【过渡】。过渡本身可能会被紧急更新中断，而之前不相关的过渡，将被忽略。这将告诉ui仅显示其最新状态，并跳过次要状态的更新，过渡，这个过程中计算可能慢，有时会返回中间值 或不相关的状态。我们下面代码所示，我们将input 框中的值的改变标记为紧急状态. 在过渡期会进行二次更新，因为它可能会触发缓慢更新，同时我们在输入时，会导致ui卡顿或者延迟，影响用户体验 。</p> <p>startTransition 非常适应用于任何需要后台运行的更新，例如当遇到缓慢且复杂的渲染任务，或者当更新依赖于数据获取时，网速很慢的情况。</p> <h3 id="_04-suspense-and-ssr"><a href="#_04-suspense-and-ssr" class="header-anchor">#</a> 04. Suspense and SSR</h3> <ul><li>更方便的组织并行请求和 loading状态的代码</li></ul> <h4 id="ssr"><a href="#ssr" class="header-anchor">#</a> SSR</h4> <p>不使用SSR渲染，网站在第一次运行会白屏，这是因为浏览器需求请求并读取我们的javascrupt，这需要一些时间，接着才会加载组件，页面才能进行交互，使用SSR时，用户可以直观的看到应用程序外观，但在加载javascript时，依旧无法交互，其工作原理是先在服务器上的渲染所有组件，然后将结果作为HTML发送给浏览器 ，接着像往常一样加载javascript，而html通过激活（Hydration）作用后，恢复可交互的状态，这会将静态html元素转化为动态react组件。这种方式存在的主要问题是，只要javascript还未被获取加载，html就还未激活，页面无法进行交互（interactive）。</p> <p>为了解决这个瀑布问题，react18 SSR提供了两个新功能：</p> <ul><li>Streamimg HTML （流式html）：简而言之，流式html意味着服务器可以在你的组件渲染时，发送组件的片段，这方式可以通过Suspense实现，我们可以在应用程序中声明哪些部分需要加载更长的时间，哪些部分应该直接渲染。如果我们渲染一篇带有评论的文章，其中文章是页面的关键部分，我们可以直接发送要加载文章内容的html到浏览器，而无需等待评论。我们可以使用Suspense展示一个加载器，一旦评论准备好，react将发送新的HTML替代加载指示器。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;NavBar /&gt;
+&lt;SideBar /&gt;
+&lt;Article /&gt;
+&lt;Suspense callback={&lt;Loader/&gt;}&gt;
+&lt;Components /&gt;
+&lt;/Suspense&gt;
+</code></pre></div><ul><li>Selective Hydration（选择性激活）:完全改变了规则 ，before：必须等待每个组件被渲染后，才能开始激活，从而导致代码分割问题，而现在组件使用Suspense进行包裹，不会再阻碍激活。</li></ul> <p>比如上述文章 评论组件使用Suspense包裹，就不会阻碍文章和其他组件被激活。每个准备好的组件都会开始被激活，一旦浏览器获取到需求的内容和javascript代码 ，评论也会被激活。另外特殊一点：组件被完全被激活之前与之交互，比如说单击了某处，react会记录下这次点击事件，并且把点击组件的Hydration优先级提高，因为它更紧迫。当组件hydration 完成后，react会重新触发之前记录的点击事件，让组件响应这个交互（确保了交互在我们激活完成后，再次被执行 保证它优于其他组件执行激活操作 ）。如果没有其他高优先级的工作了，react会进行其他组件的Hrdartion部分（优先从组件树中靠前的位置）。</p> <h4 id="suspense"><a href="#suspense" class="header-anchor">#</a> Suspense</h4> <p>过去我们是如何获取数据并渲染的？</p> <ul><li>fetch on render</li> <li>fetch then render</li> <li>fetch whiler render（Suspense）</li></ul> <h5 id="基本原理"><a href="#基本原理" class="header-anchor">#</a> 基本原理</h5> <p>在suspense包裹的内容，如果react看到一个被throw出来的promise ，那么react会catch住它，并找到离他最近的Suspense组件 ，这样suspense就知道 它需要等这个promise完成 ，接着他就可以直接渲染fallbak的loading部分。在promise.resolve后 ，suspense就会渲染内部需要使用的组件，所以为了使用suspense ，数据请求的方法 是需要符合某种约定的，也就意味着我们的网络请求层 就需要适配React Suspense的这种约定，react希望更多的网络请求库能够适配 suspense这种机制 ，这样开发者就能更方便的使用这种功能，例如Relay, Next.js, Hydrogen, or Remix</p> <div class="language- extra-class"><pre class="language-text"><code>function Component() {
+  if (data) {
+    return &lt;div&gt;{data.message}&lt;/div&gt;
+  }
+  throw promise
+  // react will catch this, find the closest &quot;Suspense&quot; Component
+}
+
+React.createRoot(rootEL).render(
+  &lt;React.Suspense callback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
+    &lt;Component/&gt;
+  &lt;/React.Suspense&gt;
+)
+</code></pre></div><h3 id="_05-new-client-and-server-rendering-apis"><a href="#_05-new-client-and-server-rendering-apis" class="header-anchor">#</a> 05. New Client and Server Rendering APIs</h3> <h4 id="react-dom-客户端"><a href="#react-dom-客户端" class="header-anchor">#</a> <a href="https://reactjs.org/docs/react-dom-client.html" target="_blank" rel="noopener noreferrer">React DOM 客户端<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <ul><li>新API 导出位置：react-dom/client</li></ul> <ol><li><p>createRoot：为root创建以渲染或卸载的新方法，使用它代替ReactDOM.render. 没有它，React 18 中的新功能就无法工作</p></li> <li><p>hydrateRoot： 为hydrate一个服务渲染应用程序的新方法。使用它而不是 ReactDOM.hydrate与新的 React DOM 服务器 API 结合使用。没有它，React 18 中的新功能就无法工作</p></li></ol> <p>createRoot 和 hydraRoot 都接受一个名为 onRecoverableError 的新选项，以便我们想在react从渲染 或者hydration期间的错误中恢复或日志记录时收到通知，默认情况下，在较旧的浏览器中，React使用reportError, 或console.error.</p> <h4 id="react-dom-server"><a href="#react-dom-server" class="header-anchor">#</a> <a href="https://reactjs.org/docs/react-dom-server.html" target="_blank" rel="noopener noreferrer">React DOM Server<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <ul><li>新API导出位置: react-dom/server,并且且完全支持在服务器上流式传输 Suspense</li></ul> <ol><li><p>renderToPipeableStream：用于node环境的流式传输</p></li> <li><p>renderToReadableStream：适用于现代边缘运行时环境，例如 Deno 和 Cloudflare worker</p></li></ol> <h3 id="_06-新的严格模式行为"><a href="#_06-新的严格模式行为" class="header-anchor">#</a> 06. 新的严格模式行为</h3> <ul><li>确保可重用状态：允许 React 在保留状态的同时添加和删除 UI 部分</li></ul> <p>例如，当用户从一个屏幕上移开并返回时，React 应该能够立即显示上一个屏幕。为此，React 将使用与以前相同的组件状态卸载和重新安装树。
+此功能将为 React 应用程序提供更好的开箱即用性能，但要求组件能够对多次安装和销毁的效果具有弹性。大多数效果无需任何更改即可工作，但有些效果假定它们只安装或销毁一次。</p> <p>为了帮助解决这些问题，React 18 为严格模式引入了一个新的仅限开发的检查。每当第一次安装组件时，此新检查将自动卸载并重新安装每个组件，并在第二次安装时恢复先前的状态。</p> <p>如果没有这个改变，当一个组件挂载时，React 会创建效果</p> <div class="language- extra-class"><pre class="language-text"><code>* React mounts the component.
+  * Layout effects are created.
+  * Effects are created.
+</code></pre></div><p>从 React 18 开始使用严格模式，每当组件在开发中安装时，React 将立即模拟卸载和重新安装</p> <div class="language- extra-class"><pre class="language-text"><code>* React mounts the component.
+  * Layout effects are created.
+  * Effects are created.
+* React simulates unmounting the component.
+  * Layout effects are destroyed.
+  * Effects are destroyed.
+* React simulates mounting the component with the previous state.
+  * Layout effects are created.
+  * Effects are created.
+</code></pre></div><p>在第二次挂载时，React 将从第一次挂载恢复状态。此功能模拟用户行为，例如用户从屏幕上移开并返回，确保代码能够正确处理状态恢复</p> <p>当组件卸载时，效果会正常销毁：</p> <div class="language- extra-class"><pre class="language-text"><code>* React unmounts the component.
+  * Layout effects are destroyed.
+  * Effect effects are destroyed.
+</code></pre></div><p>如何支持可重用性？</p> <p>举个例子：</p> <div class="language- extra-class"><pre class="language-text"><code>function ExampleComponent(props) {
+  useEffect(() =&gt; {
+    // Effect setup code...
+
+    return () =&gt; {
+      // Effect cleanup code...
+    };
+  }, []);
+
+  useLayoutEffect(() =&gt; {
+    // Layout effect setup code...
+
+    return () =&gt; {
+      // Layout effect cleanup code...
+    };
+  }, []);
+
+  // Render stuff...
+}
+</code></pre></div><p>这个组件声明了一些在挂载和卸载运行的Effect。通常，这些Effect只会运行一次（在最初安装组件之后），而清理功能会运行一次（在卸载组件之后）。在React 18 Strict模式下，将发生以下情况：</p> <ul><li>React渲染组件</li> <li>React挂载组件</li></ul> <ol><li>Layout effect代码运行</li> <li>Effect代码运行</li></ol> <ul><li>React模拟隐藏或卸载的组件</li></ul> <ol><li>Layout effect清理代码运行</li> <li>Effect清理代码运行</li></ol> <p>只要Effect在其自身之后进行清理（必要时返回清理方法），这通常不会导致问题。大多数Effect至少有一个依赖项。因此，它们可能已经能够适应多次运行，并且可能不需要任何更改。</p> <p>不过，仅在挂载上运行的Effect可能需要更改。从高层次来看，最有可能需要修改的影响类型分为两类：</p> <ul><li>卸载时需要清理的Effect。</li> <li>只应运行一次的Effect（挂载时或依赖项更改时）。</li></ul> <p>需要清理的效果应该具有对称性。</p> <p>无论是添加事件侦听器还是与某些命令式API交互，一般来说，如果Effect返回清理函数，那么它应该镜像设置函数。如今，许多组件使用下面所示模式的变体（variation）。</p> <p>}</p> <div class="language- extra-class"><pre class="language-text"><code>// A Ref (or Memo) is used to init and cache some imperative API.
+const ref = useRef(null);
+  if (ref.current === null) {
+  ref.current = new SomeImperativeThing();
+}
+
+// Note this could be useLayoutEffect too; same pattern.
+useEffect(() =&gt; {
+  const someImperativeThing = ref.current;
+  return () =&gt; {
+    // And an unmount effect (or layout effect) is used to destroy it.
+    someImperativeThing.destroy();
+  };
+}, []);
+}
+</code></pre></div><p>如果上面的代码被卸载和重新装载，那么命令式的东西很可能会被破坏。（毕竟，它在第一次卸载后就被摧毁了。）为了解决这个问题，我们需要（重新）初始化mount上的命令。</p> <div class="language- extra-class"><pre class="language-text"><code>// 不使用Ref来初始化一些必需的东西！
+
+useEffect(() =&gt; {
+  // 在同一个effect里面声明SomeImperativeThing，销毁它
+  // 这样，如果组件被重新装载，它将被重新创建
+  const someImperativeThing = new SomeImperativeThing();
+
+  return () =&gt; {
+    someImperativeThing.destroy();
+  };
+}, []);
+</code></pre></div><p>有时，其他函数（如事件处理程序）也需要与命令进行交互。在这种情况下，可以使用ref来共享该值。</p> <div class="language- extra-class"><pre class="language-text"><code>// 使用Ref保存该值，但在Effect中对其进行初始化
+const ref = useRef(null);
+
+useEffect(() =&gt; {
+  //   在同一个effect里面声明SomeImperativeThing，销毁它
+  // 这样，如果组件被重新装载，它将被重新创建。
+  const someImperativeThing = ref.current = new SomeImperativeThing();
+
+  return () =&gt; {
+    someImperativeThing.destroy();
+  };
+}, []);
+
+const handeThing = (event) =&gt; {
+  const someImperativeThing = ref.current;
+  // 现在我们可以使用了
+};
+</code></pre></div><p>尽管不常见，但命令式API可能还需要与其他组件共享。在这种情况下，可以使用延迟初始化函数来暴露API。</p> <div class="language- extra-class"><pre class="language-text"><code>const ref = useRef(null);
+const getterRef = useRef(() =&gt; {
+  if (ref.current === null) {
+    ref.current = new SomeImperativeThing();
+  }
+  return ref.current;
+});
+
+useEffect(() =&gt; {
+  return () =&gt; {
+    if (ref.current !== null) {
+      ref.current.destroy();
+      ref.current = null;
+    }
+  };
+}, []);
+
+</code></pre></div><p>只能运行一次的Effect可以使用ref</p> <p>不需要清理的Effect——甚至挂载Effect——可能不需要任何更改就可以使用新的语义。</p> <div class="language- extra-class"><pre class="language-text"><code>useEffect(() =&gt; {
+  SomeTrackingAPI.logImpression();
+}, []);
+
+</code></pre></div><p>这种效果是为了记录用户看到了特定内容。如果内容被隐藏，然后再次显示，该怎么办？它应该记录第二印象吗？（如果切换选项卡重新安装视图，这就是今天的效果。）如果可以的话，我们根本不需要改变效果。如果我们只想让效果记录一次，我们可以使用ref。</p> <p>在这种情况下，无论我们是挂载还是重新挂载，我们使用ref，这样我们只记录一次。</p> <h3 id="_07-新hooks"><a href="#_07-新hooks" class="header-anchor">#</a> 07. 新Hooks</h3> <h4 id="userid"><a href="#userid" class="header-anchor">#</a> userId</h4> <p>useId是一个新的钩子，用于在客户端和服务器上生成唯一的ID，同时避免不匹配。它主要用于与需要唯一ID的可访问性API集成的组件库</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>useId不用于在列表中生成密钥。密钥应该由您的数据生成。</p></div> <h4 id="usetransition"><a href="#usetransition" class="header-anchor">#</a> useTransition</h4> <p>使用Transition和startTransition可以将某些状态更新标记为不紧急。默认情况下，其他状态更新被视为紧急状态。React将允许紧急状态更新（例如，更新文本输入）中断非紧急状态更新（例如，呈现搜索结果列表）</p> <ul><li>将函数中的内容过渡,类比useCallback,将函数中的内容进行过渡</li> <li>startTransition中触发的更新会让更高优先级（如外面的click）的更新先进行</li> <li>startTransition中的延迟更新，不会触发Suspens组件的fallback，便于用户在更新期间的交互</li></ul> <div class="language- extra-class"><pre class="language-text"><code>	// isPending: 过渡任务状态,true代表过渡中,false过渡结束
+	// startTransition: 执行的过渡任务
+  const [isPending , startTransition] = useTransition()
+	startTransition(()=&gt;{
+		// ...
+	})
+</code></pre></div><h4 id="usedeferredvalue"><a href="#usedeferredvalue" class="header-anchor">#</a> useDeferredValue</h4> <ul><li>允许用户推迟屏幕更新优先级不高部分
+如果说某些渲染比较消耗性能，比如存在实时计算和反馈，我们可以使用这个Hook降低其计算的优先级，使得避免整个应用变得卡顿</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import { useDeferredValue } from 'react';
+
+const deferredValue = useDeferredValue(value, { timeoutMs: &lt;some value&gt; });
+</code></pre></div><p>此命令设置值在timeoutMs中设置的时间后“滞后”。用户界面是必须立即更新还是必须等待数据，该命令使用户界面保持激活状态和响应性，该Hook避免了UI卡顿，并始终保持用户界面响应，以保持获取数据滞后的较小成本。</p> <ul><li><p>过渡单个状态值,让状态滞后变化,类比useMemo, 对值进行过渡</p></li> <li><p>避开紧急任务的渲染,让出优先级</p> <ul><li>如果当前渲染是一个紧急更新的结果，比如用户输入，React将返回之前的值，然后在紧急渲染完成后渲染新的值</li> <li>React将在其他工作完成后立即进行更新(而不是等待任意的时间)，并且像startTransition一样，延迟值可以挂起，而不会触发现有内容的意外回退。</li></ul></li></ul> <h5 id="usetransition-usedeferredvalue-区别"><a href="#usetransition-usedeferredvalue-区别" class="header-anchor">#</a> useTransition/useDeferredValue 区别</h5> <p>react 将更新分为两种，urgent update（紧急更新
+）和transition update（过渡更新），useTransition/useDeferredValue都可以实现非紧急更新的延迟更新</p> <ul><li><p>相同点：</p> <ul><li>useDeferredValue本质上和内部实现与useTransition一样都是标记成了过渡更新任务。</li></ul></li> <li><p>不同点：</p> <ul><li><p>useDeferredValue在本质上就在Effect上执行的，而useEffect内部逻辑是异步执行的，所以它在一定程度上更滞后于useTransition</p></li> <li><p>startTransition 的回调函数是同步执行的，会比 useDeferredValue 执行的时机更早</p> <ul><li>在startTransition之中任何更新,都会标记上transition,React将在更新的时候,判断这个标记来决定是否完成此次更新。</li> <li>所以transition可以理解成比setTimeout更早的更新。</li> <li>但是同时要保证ui的正常响应,在性能好的设备上,transition两次更新的延迟会很小,但是在慢的设备上,延时会很大,但是不会影响UI的响应。</li></ul></li></ul></li></ul> <h4 id="与防抖的区别"><a href="#与防抖的区别" class="header-anchor">#</a> 与防抖的区别：</h4> <ul><li>startTransition 和 useDeferredValue 与 setTimeout（防抖节流）的区别在于 不需要等待特定时间，可以监听任务的工作状态，当urgent update更新完毕，将会自动执行 transition update</li></ul> <h3 id="_08-library-hooks"><a href="#_08-library-hooks" class="header-anchor">#</a> 08. library hooks</h3> <p>以下钩子是为库作者提供的，用于将库深入集成到React模型中，通常不在应用程序代码中使用。</p> <h4 id="usesyncexternalstore"><a href="#usesyncexternalstore" class="header-anchor">#</a> useSyncExternalStore</h4> <div class="language- extra-class"><pre class="language-text"><code>const state = useSyncExternalStore(subscribe, getSnapshot[, getServerSnapshot]);
+</code></pre></div><p>useSyncExternalStore是一个用于读取和订阅外部数据源的钩子，其方式与选择性hydration和时间切片等并发渲染功能兼容。</p> <p>此方法返回存储的值并接受三个参数：</p> <ul><li>subscribe：注册一个回调函数，每当存储发生更改时调用该函数</li> <li>getSnapshot：返回存储的当前值函数。</li> <li>getServerSnapshot：返回服务器渲染期间使用快照的函数。</li></ul> <ol><li>最基本的例子就是订阅整个store</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const state = useSyncExternalStore(store.subscribe, store.getSnapshot);
+</code></pre></div><ol start="2"><li>也可以订阅特定字段：</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const selectedField = useSyncExternalStore(
+  store.subscribe,
+  () =&gt; store.getSnapshot().selectedField,
+);
+</code></pre></div><ol start="3"><li>在服务器渲染时，必须序列化服务器上使用的存储值，并将其提供给useSyncExternalStore。React将在hydration过程中使用此快照，以防止服务器不匹配：</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const selectedField = useSyncExternalStore(
+  store.subscribe,
+  () =&gt; store.getSnapshot().selectedField,
+  () =&gt; INITIAL_SERVER_SNAPSHOT.selectedField,
+);
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p>[getSnapshot]必须返回一个缓存值。如果连续多次调用 getSnapshot，则它必须返回相同的确切值，除非两者之间有存储更新。
+提供了一个shim，用于支持作为use-sync-external-store/shim发布的多个版本.此 shim 将useSyncExternalStore在可用时优先使用, 不可用时回退到user-space 实现</p></div> <h4 id="useinsertioneffect"><a href="#useinsertioneffect" class="header-anchor">#</a> useInsertionEffect</h4> <div class="language- extra-class"><pre class="language-text"><code>useInsertionEffect(didUpdate);
+</code></pre></div><p>签名与useEffect相同，但它在所有DOM mutations(React执行对DOM的更新阶段)之前同步激发。在useLayoutEffect中读取布局之前，使用此选项将样式注入DOM。因为这个钩子的作用域有限，所以这个钩子不能访问refs，也不能调度更新。</p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>seInsertionEffect应仅限于 css-in-js 库作者。首选useEffect或useLayoutEffect。</p></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/ac6464/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">react组件</div></a> <a href="/pages/c4a159/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">react 17 更新特性</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/ac6464/" class="prev">react组件</a></span> <span class="next"><a href="/pages/c4a159/">react 17 更新特性</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/e4d971/"><div>
+            react 16 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/c4a159/"><div>
+            react 17 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f67937/"><div>
+            Concurrent Mode
+            <!----></div></a> <span class="date">04-22</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d4fb2e4.js" defer></script><script src="/assets/js/2.42c531b5.js" defer></script><script src="/assets/js/19.592e1c03.js" defer></script>
+  </body>
+</html>

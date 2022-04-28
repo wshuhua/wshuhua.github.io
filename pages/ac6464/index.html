@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react组件 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.2d4fb2e4.js" as="script"><link rel="preload" href="/assets/js/2.42c531b5.js" as="script"><link rel="preload" href="/assets/js/18.0b81d54e.js" as="script"><link rel="prefetch" href="/assets/js/10.6bd1dedd.js"><link rel="prefetch" href="/assets/js/11.e39f5a55.js"><link rel="prefetch" href="/assets/js/12.d4cb117f.js"><link rel="prefetch" href="/assets/js/13.ba9c1d24.js"><link rel="prefetch" href="/assets/js/14.e9e9e4ec.js"><link rel="prefetch" href="/assets/js/15.524254ef.js"><link rel="prefetch" href="/assets/js/16.254ebcef.js"><link rel="prefetch" href="/assets/js/17.ded59a43.js"><link rel="prefetch" href="/assets/js/19.592e1c03.js"><link rel="prefetch" href="/assets/js/20.792946e5.js"><link rel="prefetch" href="/assets/js/21.d1dffd8c.js"><link rel="prefetch" href="/assets/js/22.8c007096.js"><link rel="prefetch" href="/assets/js/23.422627e5.js"><link rel="prefetch" href="/assets/js/24.3f634c2c.js"><link rel="prefetch" href="/assets/js/25.b07b8e7d.js"><link rel="prefetch" href="/assets/js/26.f6b7fefa.js"><link rel="prefetch" href="/assets/js/27.bb30ded1.js"><link rel="prefetch" href="/assets/js/28.f599aca0.js"><link rel="prefetch" href="/assets/js/29.c4a8040d.js"><link rel="prefetch" href="/assets/js/3.66c8ff97.js"><link rel="prefetch" href="/assets/js/30.3c14c8d9.js"><link rel="prefetch" href="/assets/js/31.c45ece3b.js"><link rel="prefetch" href="/assets/js/32.6eb1b4b4.js"><link rel="prefetch" href="/assets/js/33.85a788ce.js"><link rel="prefetch" href="/assets/js/34.240aef83.js"><link rel="prefetch" href="/assets/js/35.c7f8894d.js"><link rel="prefetch" href="/assets/js/36.54051003.js"><link rel="prefetch" href="/assets/js/37.3f705fe9.js"><link rel="prefetch" href="/assets/js/38.3cbf1a17.js"><link rel="prefetch" href="/assets/js/39.188ebc83.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.165020ba.js"><link rel="prefetch" href="/assets/js/41.a40ec333.js"><link rel="prefetch" href="/assets/js/42.c4ace19d.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/6.aea33451.js"><link rel="prefetch" href="/assets/js/7.0ac51d9c.js"><link rel="prefetch" href="/assets/js/8.9f478d04.js"><link rel="prefetch" href="/assets/js/9.9aca80aa.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span> react基础</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/7f8c4f/" class="sidebar-link">react工具API</a></li><li><a href="/pages/ac6464/" aria-current="page" class="active sidebar-link">react组件</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react更新特性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react进阶</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E3%80%8Areact%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-0c557b5e>《react》笔记</a></li><li data-v-0c557b5e><a href="/categories/?category=%20react%E5%9F%BA%E7%A1%80" title="分类" data-v-0c557b5e> react基础</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-02-07</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">react组件<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="_01-component"><a href="#_01-component" class="header-anchor">#</a> 01. Component</h3> <p>packages/react/src/ReactBaseClasses.js</p> <div class="language- extra-class"><pre class="language-text"><code>// 用于更新组件状态的基类帮助程序
+function Component(props, context, updater) {
+  this.props = props;
+  this.context = context;
+  // If a component has string refs, we will assign a different object later.
+  this.refs = emptyObject; // 如果一个组件有字符串引用，后面指定一个不同的对象。
+  this.updater = updater || ReactNoopUpdateQueue; // updater 对象上保存着更新租金的方法
+}
+
+Component.prototype.setState = function(partialState, callback) {
+  this.updater.enqueueSetState(this, partialState, callback, 'setState');
+};
+
+Component.prototype.forceUpdate = function(callback) {
+  this.updater.enqueueForceUpdate(this, callback, 'forceUpdate');
+};
+</code></pre></div><ul><li>Component 底层 React 的处理逻辑是: 类组件执行构造函数过程中会在实例上绑定 props 和 context ，初始化置空 refs 属性，原型链上绑定setState、forceUpdate 方法。对于 updater，React 在实例化类组件之后会单独绑定 update 对象.</li></ul> <p>所以说 为什么调用 super(props)，由此而来。</p> <div class="language- extra-class"><pre class="language-text"><code>constructor(){
+    super()
+    console.log(this.props) // 打印 undefined 为什么?
+}
+</code></pre></div><p>绑定 props 是在父类 Component 构造函数中，执行 super 等于执行 Component 函数，此时 props 没有作为第一个参数传给 super() ，在 Component 中就会找不到 props 参数，从而变成 undefined。</p> <ul><li>调用super的原因：在ES6中，在子类的constructor中必须先调用super才能引用this</li> <li>super(props)的目的：在constructor中可以使用this.props</li></ul> <p>如何被实例化？源码如下：</p> <p>packages/react-reconciler/src/ReactFiberClassComponent.new.js</p> <div class="language- extra-class"><pre class="language-text"><code>function constructClassInstance (workInProgress, ctor, props) {
+    ...
+    let instance = new ctor(props, context);
+    adoptClassInstance(workInProgress, instance);
+    ...
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>function adoptClassInstance(workInProgress, instance) {
+  instance.updater = classComponentUpdater;
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>const classComponentUpdater = {
+  isMounted,
+  enqueueSetState(inst, payload, callback) {
+    // setState 触发
+  }
+  enqueueReplaceState(inst, payload, callback) {
+    // replaceState 触发
+    update.tag = ReplaceState;
+  }
+  enqueueForceUpdate(inst, payload, callback) {
+    // forceUpdate 触发
+    update.tag = ForceUpdate;
+  }
+}
+</code></pre></div><p>enqueueSetState/enqueueReplaceState/enqueueForceUpdate 实现方式基本一致</p> <ol><li>更新过期时间</li> <li>创建Update对象</li> <li>为update对象绑定一些属性，比如 tag 、callback</li> <li>创建的update对象入队 (enqueueUpdate)</li> <li>进入调度过程</li></ol> <h3 id="_02-purecomponent"><a href="#_02-purecomponent" class="header-anchor">#</a> 02. PureComponent</h3> <p>PureComponent 和Component用法差不多，唯一不同的是，纯组件PureComponent会进行浅比较，props 和state是否相同是否重新渲染组件。一般用于于性能优化，减少render次数。如果对象包含复杂的数据结构(比如对象和数组)，会浅比较，如果深层次的改变，是无法作出判断的，React.PureComponent 认为没有变化，而没有渲染试图。我们可以借助于immetable.js,提高对象的比较性能,用 immetable.js 配合 shouldComponentUpdate 或者 react.memo来使用, 通过immetable.js里面提供的 is 方法来判断，前后对象数据类型是否发生变化</p> <div class="language- extra-class"><pre class="language-text"><code>import React, { PureComponent } from &quot;react&quot;;
+class Index extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        name: &quot;wsh&quot;,
+        age: 18,
+      }
+    };
+    this.handerClick = this.handerClick.bind(this);
+  }
+  handerClick = () =&gt; {
+    const { user } = this.state;
+    user.age++;
+    // this.setState({ user: {...user} });
+    this.setState({ user }); // 不更新的原因：两次user对象，都指向同一个user,没有发生改变，所以不更新视图
+  };
+  render() {
+    const { user } = this.state;
+    return (
+      &lt;div&gt;
+        &lt;div&gt;
+          name: {user.name}
+          age: {user.age}
+        &lt;/div&gt;
+        &lt;button onClick={this.handerClick}&gt;点击&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Index;
+</code></pre></div><h3 id="_03-memo"><a href="#_03-memo" class="header-anchor">#</a> 03. memo</h3> <ul><li><p>React.memo 与PureComponent作用类似，可以用作性能优化.</p></li> <li><p>React.memo 是高阶组件，函数组件和类组件都可以使用,PureComponent是 只能用作类组件</p></li> <li><p>React.memo只能对props的情况确定是否渲染，而PureComponent是针对props和state</p></li> <li><p>React.memo([组件本身],param)，第一个参数是原始组件本身，第二个参数是通过对比props是否相等来对比是否渲染（pre，next）=&gt; { return true or false } 与shouldComponentUpdate 相反，返回true，说明props没有发生变化，不渲染，返回false 选择组件</p> <p>React.memo: 第二个参数 返回 true 组件不渲染 ， 返回 false 组件重新渲染。
+shouldComponentUpdate: 返回 true 组件渲染 ， 返回 false 组件不渲染。</p></li></ul> <p>React.memo在一定程度上，等价于在组件外部使用shouldComponentUpdate，用于拦截新老props，确定组件是否更新。</p> <div class="language- extra-class"><pre class="language-text"><code>import React, { Component, memo } from &quot;react&quot;;
+
+function TextMemo(props) {
+  console.log(&quot;子组件渲染&quot;);
+  if (props) {
+    return &lt;div&gt;hello react&lt;/div&gt;;
+  }
+}
+const controllIsRender = (pre, next) =&gt; {
+  if (pre.age === next.age) {
+    return true;
+  } else if (next.age &gt; 5) {
+    return true;
+  } else {
+    return false;
+  }
+};
+const NewMemo = memo(TextMemo, controllIsRender);
+
+class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 1,
+      age: 1,
+    };
+  }
+  render() {
+    const { count, age } = this.state;
+    return (
+      &lt;div&gt;
+        &lt;div&gt;
+          改变count：当前值 {count}
+          &lt;button onClick={() =&gt; this.setState({ count: count + 1 })}&gt;count++&lt;/button&gt;
+          &lt;button onClick={() =&gt; this.setState({ count: count - 1 })}&gt;count--&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          改变age：当前后 {age}
+          &lt;button onClick={() =&gt; this.setState({ age: age + 1 })}&gt;age++&lt;/button&gt;
+          &lt;button onClick={() =&gt; this.setState({ age: age - 1 })}&gt;age--&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;NewMemo age={age} count={count} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default Index;
+
+</code></pre></div><h3 id="_04-forwardref"><a href="#_04-forwardref" class="header-anchor">#</a> 04. forwardRef</h3> <h4 id="场景一-隔代获取ref引用"><a href="#场景一-隔代获取ref引用" class="header-anchor">#</a> 场景一：隔代获取ref引用</h4> <ul><li>正常情况下：react不允许ref 通过props 传递，因为在组件上已经带有ref这个属性,在组件进行调和过程中，已经被特殊处理了。</li> <li>forwardRef 出现可以解决这个问题，把ref转发到自定义的forwardRef定义的属性上，可以让ref通过props进行传递</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import React, { Component, forwardRef } from &quot;react&quot;;
+function Son(props) {
+  const { grandRef } = props;
+  return &lt;div&gt;
+      &lt;span ref={grandRef}&gt;Son&lt;/span&gt;
+  &lt;/div&gt;;
+}
+class Father extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return &lt;Son grandRef={this.props.grandRef} /&gt;;
+  }
+}
+const NewFather = forwardRef((props, ref) =&gt; (
+  &lt;Father grandRef={ref} {...props} /&gt;
+));
+
+export default class GrandFather extends Component {
+  constructor(props) {
+    super(props);
+  }
+  node = null;
+  componentDidMount() {
+      console.log(this.node)
+  }
+  render() {
+    return &lt;div&gt;
+        &lt;NewFather ref={(node) =&gt; this.node = node}/&gt;
+        &lt;Father/&gt;
+    &lt;/div&gt;;
+  }
+}
+
+</code></pre></div><h4 id="场景二-高阶组件转发ref"><a href="#场景二-高阶组件转发ref" class="header-anchor">#</a> 场景二：高阶组件转发ref</h4> <p>由于属性代理的hoc，被包裹一层，如果是类组件，通过ref拿不到原始组件的实例的，可以借助forWardRef转发ref拿到对应的实例</p> <div class="language- extra-class"><pre class="language-text"><code>import React, { Component, useRef, useEffect } from 'react'
+function HOC(Comp){
+    class Wrap extends Component {
+        render() {
+            const {forwardRef, ...otherProps} = this.props;
+            return (
+                &lt;Comp ref={forwardRef} {...otherProps}/&gt;
+            )
+        }
+    }
+    return React.forwardRef((props, ref) =&gt; &lt;Wrap forwardRef={ref} {...props}/&gt;)
+}
+class Index extends Component{
+    componentDidMount(){
+        console.log('hello react')
+    }
+    render() {
+        return (
+            &lt;div&gt;hello forwardRef&lt;/div&gt;
+        )
+    }
+}
+const HocIndex = HOC(Index);
+export default () =&gt; {
+    const node = useRef(null);
+    useEffect(() =&gt; {
+      console.log(node.current.componentDidMount(), '--')
+    }, [])
+    return &lt;div&gt;
+        &lt;HocIndex ref={node}/&gt;
+    &lt;/div&gt;
+}
+
+</code></pre></div><h3 id="_05-lazy"><a href="#_05-lazy" class="header-anchor">#</a> 05. lazy</h3> <p>React.lazy 接受一个函数，这个函数需要动态调用 import()。它必须返回一个 Promise ，该 Promise 需要 resolve 一个 default export 的 React 组件。</p> <div class="language- extra-class"><pre class="language-text"><code>import React, { Component, Suspense } from 'react'
+const UserInfo = React.lazy(() =&gt; new Promise((resolve)=&gt;{
+  setTimeout(() =&gt; {
+    resolve(import('../Component/UserInfo'))
+  }, 1000)
+  
+}))
+export default class Index extends Component {
+  render() {
+    return (
+      &lt;Suspense fallback=&quot;loading...&quot;&gt;
+        &lt;UserInfo/&gt;
+      &lt;/Suspense&gt;
+    )
+  }
+}
+
+</code></pre></div><ul><li>import 原理如下：
+import() 函数是由TS39提出的一种动态加载模块的规范实现，其返回是一个 promise。在浏览器宿主环境中一个import()的参考实现如下：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function import(url) {
+    return new Promise((resolve, reject) =&gt; {
+      const script = document.createElement('script');
+      // toString(32) 32进制
+      const tmpGlobal = &quot;__tempModuleLoadingVariable&quot;+ Math.random().toString(32).substring(2);
+      script.type = &quot;module&quot;;
+      script.textContent = `import * as m from &quot;${url}&quot;; window.${tmpGlobal} = m;`;
+      script.onload = () =&gt; {
+          resolve(window[tmpGlobal]);
+          delete(window[tmpGlobal]);
+          script.remove();
+      }
+      script.onerror = () =&gt; {
+          reject(new Error(&quot;Failed to load module script with URL &quot; + url));
+          delete(window[tmpGlobal]);
+          script.remove();
+      }
+      document.documentElement.appendChild(script)
+    })
+}
+</code></pre></div><h3 id="_06-fragment"><a href="#_06-fragment" class="header-anchor">#</a> 06. Fragment</h3> <p>不增加额外的dom节点，能够让一个组件返回多个元素
+写法：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;React.Fragment&gt;&lt;/React.Fragment&gt;
+或者
+&lt;&gt;&lt;/&gt;
+</code></pre></div><p>二者区别：</p> <ul><li>Fragment支持key元素，&lt;&gt;&lt;/&gt;不支持key元素</li></ul> <p>通过我们在map数据时，react底层会处理 默认在外部嵌套一个[Fragment]标签
+例如：</p> <div class="language- extra-class"><pre class="language-text"><code> [1,3,4].map(v =&gt; &lt;span key={v}&gt;{v}&lt;/span&gt;)
+ 等价于
+ &lt;Fragment&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/Fragment&gt;
+</code></pre></div><h3 id="_07-profiler"><a href="#_07-profiler" class="header-anchor">#</a> 07. Profiler</h3> <p>Profiler react 性能审查工具</p> <p>react 有两个阶段为我们的应用工作</p> <ul><li>render：React通过将渲染结果与先前的渲染进行比较来确定需要进行哪些DOM更改</li> <li>commit：React应用需要进行的任何更改。 从DOM中添加/删除并调用生命周期挂钩，例如componentDidMount和componentDidUpdate</li></ul> <p>profiler DevTools 是在commit 阶段收集性能数据的。各次 commit 会被展示在界面顶部的条形图中</p> <p>Profiler 一般有两个参数：</p> <ul><li>id：用来标识 Profiler的唯一性</li> <li>onRender：用于渲染完成，接受渲染参数</li></ul> <p>Profiler 需要一个 onRender 函数作为参数。 React 会在 profile 包含的组件树中任何组件 “提交” 一个更新的时候调用这个函数。 它的参数描述了渲染了什么和花费了多久。<a href="https://zh-hans.reactjs.org/docs/profiler.html" target="_blank" rel="noopener noreferrer">官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>function onRenderCallback(
+  id, // 发生提交的 Profiler 树的 “id”
+  phase, // &quot;mount&quot; （如果组件树刚加载） 或者 &quot;update&quot; （如果它重渲染了）之一
+  actualDuration, // 本次更新 committed 花费的渲染时间
+  baseDuration, // 估计不使用 memoization 的情况下渲染整颗子树需要的时间
+  startTime, // 本次更新中 React 开始渲染的时间
+  commitTime, // 本次更新中 React committed 的时间
+  interactions // 属于本次更新的 interactions 的集合
+) {
+  // 合计或记录渲染时间。。。
+}
+</code></pre></div><ul><li>id: string - 发生提交的 Profiler 树的 id。 如果有多个 profiler，它能用来分辨树的哪一部分发生了“提交”。</li> <li>phase: &quot;mount&quot; | &quot;update&quot; - 判断是组件树的第一次装载引起的重渲染，还是由 props、state 或是 hooks 改变引起的重渲染。</li> <li>actualDuration: number - 本次更新在渲染 Profiler 和它的子代上花费的时间。 这个数值表明使用 memoization 之后能表现得多好。（例如 React.memo，useMemo，shouldComponentUpdate）。 理想情况下，由于子代只会因特定的 prop 改变而重渲染，因此这个值应该在第一次装载之后显著下降。</li> <li>baseDuration: number - 在 Profiler 树中最近一次每一个组件 render 的持续时间。 这个值估计了最差的渲染时间。（例如当它是第一次加载或者组件树没有使用 memoization）。</li> <li>startTime: number - 本次更新中 React 开始渲染的时间戳。</li> <li>commitTime: number - 本次更新中 React commit 阶段结束的时间戳。 在一次 commit 中这个值在所有的 profiler 之间是共享的，可以将它们按需分组。</li> <li>interactions: Set - 当更新被制定时，“interactions” 的集合会被追踪。（例如当 render 或者 setState 被调用时）( 能用来识别更新是由什么引起的,实验性)。</li></ul> <h3 id="_08-strictmode"><a href="#_08-strictmode" class="header-anchor">#</a> 08. StrictMode</h3> <p>作用：用来检测项目中潜在的问题，与 Fragment 一样， StrictMode 不会渲染任何可见的UI 。它为其后代元素触发额外的检查和警告</p> <div class="custom-block tip"><p class="custom-block-title">注意：</p> <p>严格模式检查仅在开发模式下运行；它们不会影响生产构建。</p></div> <p>可以为应用程序的任何部分启用严格模式</p> <div class="language- extra-class"><pre class="language-text"><code>import React from 'react';
+
+function ExampleApplication() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;React.StrictMode&gt;
+        &lt;div&gt;
+          &lt;ComponentOne /&gt;
+          &lt;ComponentTwo /&gt;
+        &lt;/div&gt;
+      &lt;/React.StrictMode&gt;
+      &lt;Footer /&gt;
+    &lt;/div&gt;
+  );
+}
+
+</code></pre></div><p>StrictMode 目前有助于</p> <ul><li>识别不安全的生命周期(UNSAFE_componentWillMount, UNSAFE_componentWillReceiveProps, UNSAFE_componentWillUpdate)</li> <li>关于使用过时字符串 ref API 的警告</li> <li>关于使用废弃的 findDOMNode 方法的警告</li> <li>检测意外的副作用</li> <li>检测过时的 context API</li></ul></div></div> <!----> <div class="page-edit"><!----> <div class="tags"><a href="/tags/?tag=react" title="标签">#react</a></div> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/7f8c4f/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">react工具API</div></a> <a href="/pages/a34148/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">react18 更新特性</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/7f8c4f/" class="prev">react工具API</a></span> <span class="next"><a href="/pages/a34148/">react18 更新特性</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/e4d971/"><div>
+            react 16 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/c4a159/"><div>
+            react 17 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f67937/"><div>
+            Concurrent Mode
+            <!----></div></a> <span class="date">04-22</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d4fb2e4.js" defer></script><script src="/assets/js/2.42c531b5.js" defer></script><script src="/assets/js/18.0b81d54e.js" defer></script>
+  </body>
+</html>

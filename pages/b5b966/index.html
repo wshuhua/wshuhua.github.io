@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react render阶段 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.2d4fb2e4.js" as="script"><link rel="preload" href="/assets/js/2.42c531b5.js" as="script"><link rel="preload" href="/assets/js/23.422627e5.js" as="script"><link rel="prefetch" href="/assets/js/10.6bd1dedd.js"><link rel="prefetch" href="/assets/js/11.e39f5a55.js"><link rel="prefetch" href="/assets/js/12.d4cb117f.js"><link rel="prefetch" href="/assets/js/13.ba9c1d24.js"><link rel="prefetch" href="/assets/js/14.e9e9e4ec.js"><link rel="prefetch" href="/assets/js/15.524254ef.js"><link rel="prefetch" href="/assets/js/16.254ebcef.js"><link rel="prefetch" href="/assets/js/17.ded59a43.js"><link rel="prefetch" href="/assets/js/18.0b81d54e.js"><link rel="prefetch" href="/assets/js/19.592e1c03.js"><link rel="prefetch" href="/assets/js/20.792946e5.js"><link rel="prefetch" href="/assets/js/21.d1dffd8c.js"><link rel="prefetch" href="/assets/js/22.8c007096.js"><link rel="prefetch" href="/assets/js/24.3f634c2c.js"><link rel="prefetch" href="/assets/js/25.b07b8e7d.js"><link rel="prefetch" href="/assets/js/26.f6b7fefa.js"><link rel="prefetch" href="/assets/js/27.bb30ded1.js"><link rel="prefetch" href="/assets/js/28.f599aca0.js"><link rel="prefetch" href="/assets/js/29.c4a8040d.js"><link rel="prefetch" href="/assets/js/3.66c8ff97.js"><link rel="prefetch" href="/assets/js/30.3c14c8d9.js"><link rel="prefetch" href="/assets/js/31.c45ece3b.js"><link rel="prefetch" href="/assets/js/32.6eb1b4b4.js"><link rel="prefetch" href="/assets/js/33.85a788ce.js"><link rel="prefetch" href="/assets/js/34.240aef83.js"><link rel="prefetch" href="/assets/js/35.c7f8894d.js"><link rel="prefetch" href="/assets/js/36.54051003.js"><link rel="prefetch" href="/assets/js/37.3f705fe9.js"><link rel="prefetch" href="/assets/js/38.3cbf1a17.js"><link rel="prefetch" href="/assets/js/39.188ebc83.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.165020ba.js"><link rel="prefetch" href="/assets/js/41.a40ec333.js"><link rel="prefetch" href="/assets/js/42.c4ace19d.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/6.aea33451.js"><link rel="prefetch" href="/assets/js/7.0ac51d9c.js"><link rel="prefetch" href="/assets/js/8.9f478d04.js"><link rel="prefetch" href="/assets/js/9.9aca80aa.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react更新特性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span> react进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/c34d3a/" class="sidebar-link">react 架构演变</a></li><li><a href="/pages/b5b966/" aria-current="page" class="active sidebar-link">react render阶段</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/f04e17/" class="sidebar-link">react commit阶段</a></li><li><a href="/pages/fb794b/" class="sidebar-link">react diff</a></li><li><a href="/pages/1ac33a/" class="sidebar-link">react 状态更新</a></li><li><a href="/pages/f09444/" class="sidebar-link">react hook</a></li><li><a href="/pages/f67937/" class="sidebar-link">Concurrent Mode</a></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E3%80%8Areact%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-0c557b5e>《react》笔记</a></li><li data-v-0c557b5e><a href="/categories/?category=%20react%E8%BF%9B%E9%98%B6" title="分类" data-v-0c557b5e> react进阶</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-04-19</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">react render阶段<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="_01-整体流程概述"><a href="#_01-整体流程概述" class="header-anchor">#</a> 01. 整体流程概述</h3> <p>架构体系体现如图所示：</p> <p><img src="/images/react/%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B.png" alt=""></p> <p>workInProgress 代表当前已创建的 workInProgress fiber。</p> <p>performUnitOfWork 方法会创建下一个 Fiber 节点并赋值给 workInProgress，并将 workInProgress 与已创建的 Fiber 节点连接起来构成 Fiber 树。</p> <div class="language- extra-class"><pre class="language-text"><code>function performUnitOfWork(unitOfWork) {
+  var current = unitOfWork.alternate;
+  setCurrentFiber(unitOfWork);
+  var next;
+
+  if ( (unitOfWork.mode &amp; ProfileMode) !== NoMode) {
+    startProfilerTimer(unitOfWork);
+    next = beginWork$1(current, unitOfWork, subtreeRenderLanes);
+    stopProfilerTimerIfRunningAndRecordDelta(unitOfWork, true);
+  } else {
+    next = beginWork$1(current, unitOfWork, subtreeRenderLanes);
+  }
+
+  resetCurrentFiber();
+  unitOfWork.memoizedProps = unitOfWork.pendingProps;
+
+  if (next === null) {
+    completeUnitOfWork(unitOfWork);
+  } else {
+    workInProgress = next;
+  }
+
+  ReactCurrentOwner$2.current = null;
+}
+
+</code></pre></div><p>我们知道 Fiber Reconciler 是从 Stack Reconciler 重构而来，通过遍历的方式实现可中断的递归，所以 performUnitOfWork 的工作可以分为两部分：“递”和“归”。</p> <p>举例说明整个调用顺序</p> <div class="language- extra-class"><pre class="language-text"><code>function App() {
+  return (
+    &lt;div&gt;
+      &lt;span&gt;wsh&lt;/span&gt;
+      age: 18
+    &lt;/div&gt;
+  )
+}
+
+ReactDOM.render(&lt;App /&gt;, document.getElementById(&quot;root&quot;));
+</code></pre></div><p><img src="/images/react/render%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B.png" alt=""></p> <p>render 阶段执行顺序如下：</p> <div class="language- extra-class"><pre class="language-text"><code>rootFiber beginWork
+App Fiber beginWork
+div Fiber beginWork
+&quot;age: 18&quot; Fiber beginWork beginWork
+&quot;age: 18&quot; Fiber completeWork
+span Fiber completeWork
+div Fiber completeWork
+App Fiber completeWork
+rootFiber Fiber completeWork
+</code></pre></div><h3 id="_02-递阶段"><a href="#_02-递阶段" class="header-anchor">#</a> 02. 递阶段</h3> <p>首先从 RootFiber 开始向下深度优先遍历。为遍历到的每个 Fiber 节点调用 beginWork 方法。
+该方法会根据传入的 Fiber 节点创建子 Fiber 节点，并将这两个 Fiber 节点连接起来。
+当遍历到叶子节点（即没有子组件的组件）时就会进入“归”阶段。</p> <p>源码大致如下：</p> <div class="language- extra-class"><pre class="language-text"><code>function beginWork(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  renderLanes: Lanes,
+){
+  // ...
+}
+</code></pre></div><ul><li>current：当前组件对应的 Fiber 节点在上一次更新时的 Fiber 节点，即 workInProgress.alternate</li> <li>workInProgress：当前组件对应的 Fiber 节点</li> <li>renderLanes：优先级相关，Scheduler 使用</li></ul> <p>在 mount 首次渲染时，不存在当前组件对应的 Fiber 节点在上一次更新时的 Fiber 节点，current === null
+组件 update 时，current !== null。</p> <p>通过【current === null】来区分组件是处于 mount 还是 update。</p> <p><strong>beginWork 的工作可以划分为两部分：</strong></p> <ol><li><p>mount 时：除 fiberRootNode 以外，current === null。会根据 fiber.tag 不同，创建不同类型的子 Fiber 节点</p></li> <li><p>update 时：如果 current 存在，在满足一定条件时可以复用 current 节点，这样就能 clone current.child 作为 workInProgress.child，而不需要新建 workInProgress.child。</p></li></ol> <div class="language- extra-class"><pre class="language-text"><code>function beginWork(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  renderLanes: Lanes
+): Fiber | null {
+
+  // update时：如果current存在,可能存在优化路径，复用current（即上一次更新的Fiber节点）
+  if (current !== null) {
+    // ...省略
+
+    // 复用current
+    return bailoutOnAlreadyFinishedWork(
+      current,
+      workInProgress,
+      renderLanes,
+    );
+  } else {
+    didReceiveUpdate = false;
+  }
+
+  // mount时：根据tag不同，创建不同的子Fiber节点
+  switch (workInProgress.tag) {
+    case IndeterminateComponent:
+      // ...省略
+      return mountIndeterminateComponent
+    case LazyComponent:
+      // ...省略
+      return mountLazyComponent
+    case FunctionComponent:
+      // ...省略
+      return updateFunctionComponent
+    case ClassComponent:
+      // ...省略
+      return updateClassComponent()
+    case HostRoot:
+      // ...省略
+      return updateHostRoot()
+    case HostComponent:
+      // ...省略
+    case HostText:
+      // ...省略
+      return updateHostText$1()
+  }
+}
+</code></pre></div><h4 id="update-时"><a href="#update-时" class="header-anchor">#</a> update 时：</h4> <ol><li>oldProps === newProps &amp;&amp; workInProgress.type === current.type，即props与fiber.type不变</li> <li>!includesSomeLane(renderLanes, updateLanes)，即当前Fiber节点优先级不够</li> <li>didReceiveUpdate = false 可以直接复用前一次更新的子Fiber，不需要新建子Fiber</li></ol> <div class="language- extra-class"><pre class="language-text"><code>if (current !== null) {
+    const oldProps = current.memoizedProps;
+    const newProps = workInProgress.pendingProps;
+
+    if (
+      oldProps !== newProps ||
+      hasLegacyContextChanged() ||
+      (__DEV__ ? workInProgress.type !== current.type : false)
+    ) {
+      didReceiveUpdate = true;
+    } else if (!includesSomeLane(renderLanes, updateLanes)) {
+      didReceiveUpdate = false;
+      switch (workInProgress.tag) {
+        // ...
+      }
+      return bailoutOnAlreadyFinishedWork(
+        current,
+        workInProgress,
+        renderLanes,
+      );
+    } else {
+      didReceiveUpdate = false;
+    }
+  } else {
+    didReceiveUpdate = false;
+  }
+</code></pre></div><h4 id="mount时"><a href="#mount时" class="header-anchor">#</a> mount时：</h4> <p>当不满足路径优化时，我们会创建子fiber节点
+根据fiber.tag不同，进入不同类型Fiber的创建逻辑,<a href="https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactWorkTags.js" target="_blank" rel="noopener noreferrer">tag<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language- extra-class"><pre class="language-text"><code>// mount时：根据tag不同，创建不同的Fiber节点
+switch (workInProgress.tag) {
+  case IndeterminateComponent: 
+    // ...省略
+  case LazyComponent: 
+    // ...省略
+  case FunctionComponent: 
+    // ...省略
+  case ClassComponent: 
+    // ...省略
+  case HostRoot:
+    // ...省略
+  case HostComponent:
+    // ...省略
+  case HostText:
+    // ...省略
+  // ...省略其他类型
+}
+</code></pre></div><p>对于我们常见的组件类型，如（FunctionComponent/ClassComponent/HostComponent），最终会进入reconcileChildren方法。</p> <h4 id="reconcilechildren"><a href="#reconcilechildren" class="header-anchor">#</a> reconcileChildren</h4> <ul><li><p>对于mount的组件，创建新的子Fiber节点</p></li> <li><p>对于update的组件，会将当前组件与该组件在上次更新时对应的Fiber节点比较（Diff算法），将比较的结果生成新Fiber节点</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>export function reconcileChildren(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  nextChildren: any,
+  renderLanes: Lanes
+) {
+  if (current === null) {
+    // 对于mount的组件，不会为生成的Fiber节点带上effectTag属性
+    workInProgress.child = mountChildFibers(
+      workInProgress,
+      null,
+      nextChildren,
+      renderLanes,
+    );
+  } else {
+    // 对于update的组件，为生成的Fiber节点带上effectTag属性
+    workInProgress.child = reconcileChildFibers(
+      workInProgress,
+      current.child,
+      nextChildren,
+      renderLanes,
+    );
+  }
+}
+</code></pre></div><p>通过代码可以看到 无论是mount或者update ，最终都是将新的子fiber节点赋值给workInProgress.child,作为本次beginWork的返回值，并作为下次performUnitOfWork执行时workInProgress的传参。
+其流程图下：</p> <p><img src="/images/react/beginWork.png" alt=""></p> <h3 id="_03-归阶段"><a href="#_03-归阶段" class="header-anchor">#</a> 03. 归阶段</h3> <p>在“归”阶段会调用 completeWork 处理 Fiber 节点。
+当某个 Fiber 节点执行完 completeWork，如果其存在兄弟 Fiber 节点（即 fiber.sibling !== null），会进入其兄弟 Fiber 的“递”阶段。
+如果不存在兄弟 Fiber，会进入父级 Fiber 的“归”阶段。
+“递”和“归”阶段会交错执行直到“归”到 rootFiber。至此，render 阶段的工作就结束了。</p> <div class="language- extra-class"><pre class="language-text"><code>function completeWork(
+  current: Fiber | null,
+  workInProgress: Fiber,
+  renderLanes: Lanes,
+): Fiber | null {
+  const newProps = workInProgress.pendingProps;
+
+  switch (workInProgress.tag) {
+    case IndeterminateComponent:
+    case LazyComponent:
+    case SimpleMemoComponent:
+    case FunctionComponent:
+    case ForwardRef:
+    case Fragment:
+    case Mode:
+    case Profiler:
+    case ContextConsumer:
+    case MemoComponent:
+      return null;
+    case ClassComponent: {
+      // ...省略
+      return null;
+    }
+    case HostRoot: {
+      // ...省略
+      updateHostContainer(workInProgress);
+      return null;
+    }
+    case HostComponent: {
+      // ...省略
+      return null;
+    }
+  // ...省略
+</code></pre></div><p>以HostComponent 为例：</p> <div class="language- extra-class"><pre class="language-text"><code>case HostComponent: {
+  popHostContext(workInProgress);
+  const rootContainerInstance = getRootHostContainer();
+  const type = workInProgress.type;
+  // workInProgress.stateNode != null 该Fiber节点是否存在对应的DOM节点
+  if (current !== null &amp;&amp; workInProgress.stateNode != null) {
+    // update的情况
+  } else {
+    // mount的情况
+  }
+  return null;
+}
+</code></pre></div><h4 id="update"><a href="#update" class="header-anchor">#</a> update</h4> <p>update，fiber节点山已经存在对应的DOM节点，所以不需要生成DOM节点，需要做的就是关注props的变化，比如：onClick等回调函数的注册，处理style props。
+主要逻辑如下：</p> <div class="language- extra-class"><pre class="language-text"><code>if (current !== null &amp;&amp; workInProgress.stateNode != null) {
+  // update的情况
+  updateHostComponent(
+    current,
+    workInProgress,
+    type,
+    newProps,
+    rootContainerInstance,
+  );
+  if (current.ref !== workInProgress.ref) {
+    markRef(workInProgress);
+  }
+}
+
+</code></pre></div><p>updateHostComponent内部处理逻辑，被处理完的props会被赋值给workInProgress.updateQueue，并最终在commit阶段被渲染在页面。</p> <div class="language- extra-class"><pre class="language-text"><code>const updatePayload = prepareUpdate(
+  instance,
+  type,
+  oldProps,
+  newProps,
+  rootContainerInstance,
+  currentHostContext,
+);
+// updatePayload 数据结构 为：[key1, value1, key2, value2]
+workInProgress.updateQueue = (updatePayload: any);
+
+</code></pre></div><h4 id="mount"><a href="#mount" class="header-anchor">#</a> mount</h4> <ul><li>为Fiber节点生成对应的DOM节点</li> <li>将子孙DOM节点插入刚生成的DOM节点中</li> <li>与update逻辑中的updateHostComponent类似的处理props的过程</li></ul> <p>代码简化逻辑如下：</p> <div class="language- extra-class"><pre class="language-text"><code>// mount的情况
+
+const currentHostContext = getHostContext();
+// 为fiber创建对应DOM节点
+const instance = createInstance(
+    type,
+    newProps,
+    rootContainerInstance,
+    currentHostContext,
+    workInProgress,
+  );
+// 将子孙DOM节点插入刚生成的DOM节点中
+appendAllChildren(instance, workInProgress, false, false);
+// DOM节点赋值给fiber.stateNode
+workInProgress.stateNode = instance;
+
+// 与update逻辑中的updateHostComponent类似的处理props的过程
+if (
+  finalizeInitialChildren(
+    instance,
+    type,
+    newProps,
+    rootContainerInstance,
+    currentHostContext,
+  )
+) {
+  markUpdate(workInProgress);
+}
+</code></pre></div><h4 id="effectlist"><a href="#effectlist" class="header-anchor">#</a> effectList</h4> <p>作为DOM操作的依据，commit阶段需要找到所有有effectTag的Fiber节点并依次执行effectTag对应操作。这个时候我们不需要再次深度遍历。因为
+在completeWork的上层函数<a href="https://github.com/facebook/react/blob/1fb18e22ae66fdb1dc127347e169e73948778e5a/packages/react-reconciler/src/ReactFiberWorkLoop.new.js#L1744" target="_blank" rel="noopener noreferrer">completeUnitOfWork<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>中，每个执行完completeWork且存在effectTag的Fiber节点会被保存在一条被称为effectList的单向链表中。</p> <p>effectList中第一个Fiber节点保存在fiber.firstEffect，最后一个元素保存在fiber.lastEffect。</p> <div class="language- extra-class"><pre class="language-text"><code>if (returnFiber.firstEffect === null) {
+  returnFiber.firstEffect = completedWork.firstEffect;
+}
+if (completedWork.lastEffect !== null) {
+  if (returnFiber.lastEffect !== null) {
+    returnFiber.lastEffect.nextEffect = completedWork.firstEffect;
+  }
+  returnFiber.lastEffect = completedWork.lastEffect;
+}
+</code></pre></div><p>在“归”阶段，所有有effectTag的Fiber节点都会被追加在effectList中，最终形成一条以rootFiber.firstEffect为起点的单向链表</p> <div class="language- extra-class"><pre class="language-text"><code>                       nextEffect         nextEffect
+rootFiber.firstEffect -----------&gt; fiber -----------&gt; fiber
+</code></pre></div><p>hostComponet 归流程：</p> <p><img src="/images/react/completeWork.png" alt=""></p></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/c34d3a/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">react 架构演变</div></a> <a href="/pages/f04e17/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">react commit阶段</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/c34d3a/" class="prev">react 架构演变</a></span> <span class="next"><a href="/pages/f04e17/">react commit阶段</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/e4d971/"><div>
+            react 16 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/c4a159/"><div>
+            react 17 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f67937/"><div>
+            Concurrent Mode
+            <!----></div></a> <span class="date">04-22</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d4fb2e4.js" defer></script><script src="/assets/js/2.42c531b5.js" defer></script><script src="/assets/js/23.422627e5.js" defer></script>
+  </body>
+</html>

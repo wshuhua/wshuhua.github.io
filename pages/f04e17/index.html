@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react commit阶段 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.2d4fb2e4.js" as="script"><link rel="preload" href="/assets/js/2.42c531b5.js" as="script"><link rel="preload" href="/assets/js/24.3f634c2c.js" as="script"><link rel="prefetch" href="/assets/js/10.6bd1dedd.js"><link rel="prefetch" href="/assets/js/11.e39f5a55.js"><link rel="prefetch" href="/assets/js/12.d4cb117f.js"><link rel="prefetch" href="/assets/js/13.ba9c1d24.js"><link rel="prefetch" href="/assets/js/14.e9e9e4ec.js"><link rel="prefetch" href="/assets/js/15.524254ef.js"><link rel="prefetch" href="/assets/js/16.254ebcef.js"><link rel="prefetch" href="/assets/js/17.ded59a43.js"><link rel="prefetch" href="/assets/js/18.0b81d54e.js"><link rel="prefetch" href="/assets/js/19.592e1c03.js"><link rel="prefetch" href="/assets/js/20.792946e5.js"><link rel="prefetch" href="/assets/js/21.d1dffd8c.js"><link rel="prefetch" href="/assets/js/22.8c007096.js"><link rel="prefetch" href="/assets/js/23.422627e5.js"><link rel="prefetch" href="/assets/js/25.b07b8e7d.js"><link rel="prefetch" href="/assets/js/26.f6b7fefa.js"><link rel="prefetch" href="/assets/js/27.bb30ded1.js"><link rel="prefetch" href="/assets/js/28.f599aca0.js"><link rel="prefetch" href="/assets/js/29.c4a8040d.js"><link rel="prefetch" href="/assets/js/3.66c8ff97.js"><link rel="prefetch" href="/assets/js/30.3c14c8d9.js"><link rel="prefetch" href="/assets/js/31.c45ece3b.js"><link rel="prefetch" href="/assets/js/32.6eb1b4b4.js"><link rel="prefetch" href="/assets/js/33.85a788ce.js"><link rel="prefetch" href="/assets/js/34.240aef83.js"><link rel="prefetch" href="/assets/js/35.c7f8894d.js"><link rel="prefetch" href="/assets/js/36.54051003.js"><link rel="prefetch" href="/assets/js/37.3f705fe9.js"><link rel="prefetch" href="/assets/js/38.3cbf1a17.js"><link rel="prefetch" href="/assets/js/39.188ebc83.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.165020ba.js"><link rel="prefetch" href="/assets/js/41.a40ec333.js"><link rel="prefetch" href="/assets/js/42.c4ace19d.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/6.aea33451.js"><link rel="prefetch" href="/assets/js/7.0ac51d9c.js"><link rel="prefetch" href="/assets/js/8.9f478d04.js"><link rel="prefetch" href="/assets/js/9.9aca80aa.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span> react更新特性</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span> react进阶</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/c34d3a/" class="sidebar-link">react 架构演变</a></li><li><a href="/pages/b5b966/" class="sidebar-link">react render阶段</a></li><li><a href="/pages/f04e17/" aria-current="page" class="active sidebar-link">react commit阶段</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/fb794b/" class="sidebar-link">react diff</a></li><li><a href="/pages/1ac33a/" class="sidebar-link">react 状态更新</a></li><li><a href="/pages/f09444/" class="sidebar-link">react hook</a></li><li><a href="/pages/f67937/" class="sidebar-link">Concurrent Mode</a></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E3%80%8Areact%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-0c557b5e>《react》笔记</a></li><li data-v-0c557b5e><a href="/categories/?category=%20react%E8%BF%9B%E9%98%B6" title="分类" data-v-0c557b5e> react进阶</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-04-22</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">react commit阶段<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="_01-commit-概念"><a href="#_01-commit-概念" class="header-anchor">#</a> 01. commit 概念</h3> <p>commitRoot 是commit 阶段的起点， fiberRootNode 作为参数</p> <div class="language- extra-class"><pre class="language-text"><code>commitRoot(root);
+</code></pre></div><p>在rootFiber.firstEffect上保存了一条需要执行副作用的Fiber节点的单向链表effectList，这些Fiber节点的updateQueue中保存了变化的props。
+这些副作用对应的DOM操作都是在Commit 阶段中进行的。</p> <h5 id="commit阶段的主要工作-即renderer的工作流程-分为三部分"><a href="#commit阶段的主要工作-即renderer的工作流程-分为三部分" class="header-anchor">#</a> commit阶段的主要工作（即Renderer的工作流程）分为三部分：</h5> <ol><li>before mutation阶段（执行DOM操作前）</li> <li>mutation阶段（执行DOM操作）</li> <li>layout阶段（执行DOM操作后）</li></ol> <h3 id="_02-before-mutation阶段"><a href="#_02-before-mutation阶段" class="header-anchor">#</a> 02.  before mutation阶段</h3> <p>commitBeforeMutationEffects(finishedWork); 主题函数</p> <div class="language- extra-class"><pre class="language-text"><code>// 保存之前的优先级，以同步优先级执行，执行完毕后恢复之前优先级
+const previousLanePriority = getCurrentUpdateLanePriority();
+setCurrentUpdateLanePriority(SyncLanePriority);
+
+// 将当前上下文标记为CommitContext，作为commit阶段的标志
+const prevExecutionContext = executionContext;
+executionContext |= CommitContext;
+
+// 处理focus状态
+focusedInstanceHandle = prepareForCommit(root.containerInfo);
+shouldFireAfterActiveInstanceBlur = false;
+
+// beforeMutation阶段的主函数
+commitBeforeMutationEffects(finishedWork);
+
+focusedInstanceHandle = null;
+</code></pre></div><h4 id="commitbeforemutationeffects主要用途"><a href="#commitbeforemutationeffects主要用途" class="header-anchor">#</a> commitBeforeMutationEffects主要用途</h4> <div class="language- extra-class"><pre class="language-text"><code>function commitBeforeMutationEffects() {
+  while (nextEffect !== null) {
+    const current = nextEffect.alternate;
+
+    if (!shouldFireAfterActiveInstanceBlur &amp;&amp; focusedInstanceHandle !== null) {
+      // ...focus blur相关
+    }
+
+    const effectTag = nextEffect.effectTag;
+
+    // 调用getSnapshotBeforeUpdate
+    if ((effectTag &amp; Snapshot) !== NoEffect) {
+      commitBeforeMutationEffectOnFiber(current, nextEffect);
+    }
+
+    // 调度useEffect
+    if ((effectTag &amp; Passive) !== NoEffect) {
+      if (!rootDoesHavePassiveEffects) {
+        rootDoesHavePassiveEffects = true;
+        scheduleCallback(NormalSchedulerPriority, () =&gt; {
+          flushPassiveEffects();
+          return null;
+        });
+      }
+    }
+    nextEffect = nextEffect.nextEffect;
+  }
+}
+</code></pre></div><p>整体分为三部分：</p> <ul><li>处理DOM节点渲染/删除后的 autoFocus、blur 逻辑。</li> <li>调用getSnapshotBeforeUpdate生命周期钩子。</li> <li>调度useEffect。</li></ul> <h4 id="调用getsnapshotbeforeupdate"><a href="#调用getsnapshotbeforeupdate" class="header-anchor">#</a> 调用getSnapshotBeforeUpdate</h4> <p>Stack Reconciler重构为Fiber Reconciler后，render阶段的任务可能中断/重新开始，对应的组件在render阶段的生命周期钩子（即componentWillXXX）可能触发多次。
+React提供了替代的生命周期钩子getSnapshotBeforeUpdate。</p> <p>getSnapshotBeforeUpdate是在commit阶段内的before mutation阶段调用的，由于commit阶段是同步的，所以不会遇到多次调用的问题。</p> <p>scheduleCallback 由scheduler模块提供，用于以某个优先级异步调度一个回调函数</p> <h4 id="调度useeffect"><a href="#调度useeffect" class="header-anchor">#</a> 调度useEffect</h4> <div class="language- extra-class"><pre class="language-text"><code>// 调度useEffect
+if ((effectTag &amp; Passive) !== NoEffect) {
+  if (!rootDoesHavePassiveEffects) {
+    rootDoesHavePassiveEffects = true;
+    scheduleCallback(NormalSchedulerPriority, () =&gt; {
+      // 触发useEffect
+      flushPassiveEffects();
+      return null;
+    });
+  }
+}
+</code></pre></div><p>被异步调度的回调函数就是触发useEffect的方法flushPassiveEffects。</p> <p>在flushPassiveEffects方法内部会从全局变量rootWithPendingPassiveEffects获取effectList。</p> <h3 id="_03-mutation阶段"><a href="#_03-mutation阶段" class="header-anchor">#</a> 03. mutation阶段</h3> <p>mutation阶段 也是遍历effectList，执行函数commitMutationEffects。</p> <div class="language- extra-class"><pre class="language-text"><code>nextEffect = firstEffect;
+do {
+  try {
+      commitMutationEffects(root, renderPriorityLevel);
+    } catch (error) {
+      invariant(nextEffect !== null, 'Should be working on an effect.');
+      captureCommitPhaseError(nextEffect, error);
+      nextEffect = nextEffect.nextEffect;
+    }
+} while (nextEffect !== null);
+</code></pre></div><h4 id="commitmutationeffects主要用途"><a href="#commitmutationeffects主要用途" class="header-anchor">#</a> commitMutationEffects主要用途</h4> <div class="language- extra-class"><pre class="language-text"><code>function commitMutationEffects(root: FiberRoot, renderPriorityLevel) {
+  // 遍历effectList
+  while (nextEffect !== null) {
+
+    const effectTag = nextEffect.effectTag;
+
+    // 根据 ContentReset effectTag重置文字节点
+    if (effectTag &amp; ContentReset) {
+      commitResetTextContent(nextEffect);
+    }
+
+    // 更新ref
+    if (effectTag &amp; Ref) {
+      const current = nextEffect.alternate;
+      if (current !== null) {
+        commitDetachRef(current);
+      }
+    }
+
+    // 根据 effectTag 分别处理
+    const primaryEffectTag =
+      effectTag &amp; (Placement | Update | Deletion | Hydrating);
+    switch (primaryEffectTag) {
+      // 插入DOM
+      case Placement: {
+        commitPlacement(nextEffect);
+        nextEffect.effectTag &amp;= ~Placement;
+        break;
+      }
+      // 插入DOM 并 更新DOM
+      case PlacementAndUpdate: {
+        // 插入
+        commitPlacement(nextEffect);
+
+        nextEffect.effectTag &amp;= ~Placement;
+
+        // 更新
+        const current = nextEffect.alternate;
+        commitWork(current, nextEffect);
+        break;
+      }
+      // SSR
+      case Hydrating: {
+        nextEffect.effectTag &amp;= ~Hydrating;
+        break;
+      }
+      // SSR
+      case HydratingAndUpdate: {
+        nextEffect.effectTag &amp;= ~Hydrating;
+
+        const current = nextEffect.alternate;
+        commitWork(current, nextEffect);
+        break;
+      }
+      // 更新DOM
+      case Update: {
+        const current = nextEffect.alternate;
+        commitWork(current, nextEffect);
+        break;
+      }
+      // 删除DOM
+      case Deletion: {
+        commitDeletion(root, nextEffect, renderPriorityLevel);
+        break;
+      }
+    }
+
+    nextEffect = nextEffect.nextEffect;
+  }
+}
+</code></pre></div><p>commitMutationEffects 会先遍历effectList，对每个fiber节点 执行如下操作：</p> <ol><li>根据ContentReset effectTag 重置文本节点</li> <li>更新ref</li> <li>根据 effectTag 分别处理 增删改</li></ol> <h4 id="placement-effect"><a href="#placement-effect" class="header-anchor">#</a> Placement effect</h4> <p>该Fiber节点对应的DOM节点需要插入到页面中，调用的方法是：commitPlacement</p> <ol><li>获取父级DOM节点。其中finishedWork为传入的Fiber节点</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const parentFiber = getHostParentFiber(finishedWork);
+const parentStateNode = parentFiber.stateNode; // 父级DOM节点
+</code></pre></div><ol start="2"><li>获取Fiber节点的DOM兄弟节点</li></ol> <div class="language- extra-class"><pre class="language-text"><code>const before = getHostSibling(finishedWork);
+</code></pre></div><ol start="3"><li>根据DOM兄弟节点是否存在决定调用parentNode.insertBefore或parentNode.appendChild执行DOM插入操作。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// parentStateNode是否是rootFiber
+if (isContainer) {
+  insertOrAppendPlacementNodeIntoContainer(finishedWork, before, parent);
+} else {
+  insertOrAppendPlacementNode(finishedWork, before, parent);
+}
+</code></pre></div><h4 id="update-effect"><a href="#update-effect" class="header-anchor">#</a> Update effect</h4> <p>当Fiber节点含有Update effectTag，意味着该Fiber节点需要更新。调用的方法为commitWork，他会根据Fiber.tag分别处理。</p> <h5 id="functioncomponent-mutation"><a href="#functioncomponent-mutation" class="header-anchor">#</a> FunctionComponent mutation</h5> <p>当fiber.tag为FunctionComponent，会调用commitHookEffectListUnmount。该方法会遍历effectList，执行所有useLayoutEffect hook的销毁函数。</p> <div class="language- extra-class"><pre class="language-text"><code>useLayoutEffect(() =&gt; {
+  // ...一些副作用逻辑
+
+  return () =&gt; {
+    // ...这就是销毁函数
+  }
+</code></pre></div><h5 id="hostcomponent-mutation"><a href="#hostcomponent-mutation" class="header-anchor">#</a> HostComponent mutation</h5> <p>当fiber.tag为HostComponent，会调用commitUpdate函数。最终会在updateDOMProperties中将render阶段 completeWork中为Fiber节点赋值的updateQueue对应的内容渲染在页面上。</p> <div class="language- extra-class"><pre class="language-text"><code>for (let i = 0; i &lt; updatePayload.length; i += 2) {
+  const propKey = updatePayload[i];
+  const propValue = updatePayload[i + 1];
+
+  // 处理 style
+  if (propKey === STYLE) {
+    setValueForStyles(domElement, propValue);
+  // 处理 DANGEROUSLY_SET_INNER_HTML
+  } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
+    setInnerHTML(domElement, propValue);
+  // 处理 children
+  } else if (propKey === CHILDREN) {
+    setTextContent(domElement, propValue);
+  } else {
+  // 处理剩余 props
+    setValueForProperty(domElement, propKey, propValue, isCustomComponentTag);
+  }
+}
+</code></pre></div><h4 id="deletion-effect"><a href="#deletion-effect" class="header-anchor">#</a> Deletion effect</h4> <p>fiber节点对应的DOM 节点需要从页面中移除，使用方法： commitDeletion</p> <ol><li>递归调用Fiber节及其子孙fiber节点中fiber.tag 为ClassComponent的componentWillUnmount生命周期钩子，从页面移除DOM节点</li> <li>解绑ref</li> <li>调度useEffect的销毁函数</li></ol> <h3 id="_04-layout阶段"><a href="#_04-layout阶段" class="header-anchor">#</a> 04. layout阶段</h3> <p>执行时机： 在DOM渲染完成（mutation阶段完成）后执行的，所以该阶段触发的生命周期钩子和hook 可以直接访问到已经改变后的DOM。</p> <p>具体执行的是commitLayoutEffects函数</p> <div class="language- extra-class"><pre class="language-text"><code>root.current = finishedWork;
+
+nextEffect = firstEffect;
+do {
+  try {
+    commitLayoutEffects(root, lanes);
+  } catch (error) {
+    invariant(nextEffect !== null, &quot;Should be working on an effect.&quot;);
+    captureCommitPhaseError(nextEffect, error);
+    nextEffect = nextEffect.nextEffect;
+  }
+} while (nextEffect !== null);
+
+nextEffect = null;
+</code></pre></div><h4 id="commitlayouteffects"><a href="#commitlayouteffects" class="header-anchor">#</a> commitLayoutEffects</h4> <div class="language- extra-class"><pre class="language-text"><code>function commitLayoutEffects(root: FiberRoot, committedLanes: Lanes) {
+  while (nextEffect !== null) {
+    const effectTag = nextEffect.effectTag;
+
+    // 调用生命周期钩子和hook
+    if (effectTag &amp; (Update | Callback)) {
+      const current = nextEffect.alternate;
+      commitLayoutEffectOnFiber(root, current, nextEffect, committedLanes);
+    }
+
+    // 赋值ref
+    if (effectTag &amp; Ref) {
+      commitAttachRef(nextEffect);
+    }
+
+    nextEffect = nextEffect.nextEffect;
+  }
+}
+</code></pre></div><p>用途：</p> <ul><li>commitLayoutEffectOnFiber： 调用生命周期钩子和hook相关操作</li> <li>commitAttachRef： 赋值 ref</li></ul> <h5 id="commitlayouteffectonfiber"><a href="#commitlayouteffectonfiber" class="header-anchor">#</a> commitLayoutEffectOnFiber</h5> <ol><li>触发状态更新的this.setState 回调函数在此刻更新</li> <li>对于functionComponent 以相关类型（特殊处理后的FunctionComponent，比如ForwardRef、React.memo包裹的FunctionComponent）会调用useLayoutEffect hook 的回调函数，调度useEffect的回调与销毁函数。</li></ol> <div class="language- extra-class"><pre class="language-text"><code> switch (finishedWork.tag) {
+    // 以下都是FunctionComponent及相关类型
+    case FunctionComponent:
+    case ForwardRef:
+    case SimpleMemoComponent:
+    case Block: {
+      // 执行useLayoutEffect的回调函数
+      commitHookEffectListMount(HookLayout | HookHasEffect, finishedWork);
+      // 调度useEffect的销毁函数与回调函数
+      schedulePassiveEffects(finishedWork);
+      return;
+ }
+</code></pre></div><p>useLayoutEffect hook从上一次更新的销毁函数调用到本次更新的回调函数调用是同步执行的。
+而useEffect则需要先调度，在Layout阶段完成后再异步执行。
+HostRoot（rootFiber） 的第三个参数回调函数，也是此刻调用。</p> <div class="language- extra-class"><pre class="language-text"><code>ReactDOM.render(&lt;App /&gt;, document.querySelector(&quot;#root&quot;), function() {
+  console.log(&quot;i am mount~&quot;);
+});
+</code></pre></div><h5 id="commitattachref"><a href="#commitattachref" class="header-anchor">#</a> commitAttachRef</h5> <p>获取DOM实例，更新ref</p> <div class="language- extra-class"><pre class="language-text"><code>function commitAttachRef(finishedWork: Fiber) {
+  const ref = finishedWork.ref;
+  if (ref !== null) {
+    const instance = finishedWork.stateNode;
+
+    // 获取DOM实例
+    let instanceToUse;
+    switch (finishedWork.tag) {
+      case HostComponent:
+        instanceToUse = getPublicInstance(instance);
+        break;
+      default:
+        instanceToUse = instance;
+    }
+
+    if (typeof ref === &quot;function&quot;) {
+      // 如果ref是函数形式，调用回调函数
+      ref(instanceToUse);
+    } else {
+      // 如果ref是ref实例形式，赋值ref.current
+      ref.current = instanceToUse;
+    }
+  }
+}
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/b5b966/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">react render阶段</div></a> <a href="/pages/fb794b/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">react diff</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/b5b966/" class="prev">react render阶段</a></span> <span class="next"><a href="/pages/fb794b/">react diff</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/e4d971/"><div>
+            react 16 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/c4a159/"><div>
+            react 17 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f67937/"><div>
+            Concurrent Mode
+            <!----></div></a> <span class="date">04-22</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d4fb2e4.js" defer></script><script src="/assets/js/2.42c531b5.js" defer></script><script src="/assets/js/24.3f634c2c.js" defer></script>
+  </body>
+</html>

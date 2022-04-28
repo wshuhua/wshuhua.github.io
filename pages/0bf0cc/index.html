@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>枚举、函数、类、装饰器 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.2d4fb2e4.js" as="script"><link rel="preload" href="/assets/js/2.42c531b5.js" as="script"><link rel="preload" href="/assets/js/31.c45ece3b.js" as="script"><link rel="prefetch" href="/assets/js/10.6bd1dedd.js"><link rel="prefetch" href="/assets/js/11.e39f5a55.js"><link rel="prefetch" href="/assets/js/12.d4cb117f.js"><link rel="prefetch" href="/assets/js/13.ba9c1d24.js"><link rel="prefetch" href="/assets/js/14.e9e9e4ec.js"><link rel="prefetch" href="/assets/js/15.524254ef.js"><link rel="prefetch" href="/assets/js/16.254ebcef.js"><link rel="prefetch" href="/assets/js/17.ded59a43.js"><link rel="prefetch" href="/assets/js/18.0b81d54e.js"><link rel="prefetch" href="/assets/js/19.592e1c03.js"><link rel="prefetch" href="/assets/js/20.792946e5.js"><link rel="prefetch" href="/assets/js/21.d1dffd8c.js"><link rel="prefetch" href="/assets/js/22.8c007096.js"><link rel="prefetch" href="/assets/js/23.422627e5.js"><link rel="prefetch" href="/assets/js/24.3f634c2c.js"><link rel="prefetch" href="/assets/js/25.b07b8e7d.js"><link rel="prefetch" href="/assets/js/26.f6b7fefa.js"><link rel="prefetch" href="/assets/js/27.bb30ded1.js"><link rel="prefetch" href="/assets/js/28.f599aca0.js"><link rel="prefetch" href="/assets/js/29.c4a8040d.js"><link rel="prefetch" href="/assets/js/3.66c8ff97.js"><link rel="prefetch" href="/assets/js/30.3c14c8d9.js"><link rel="prefetch" href="/assets/js/32.6eb1b4b4.js"><link rel="prefetch" href="/assets/js/33.85a788ce.js"><link rel="prefetch" href="/assets/js/34.240aef83.js"><link rel="prefetch" href="/assets/js/35.c7f8894d.js"><link rel="prefetch" href="/assets/js/36.54051003.js"><link rel="prefetch" href="/assets/js/37.3f705fe9.js"><link rel="prefetch" href="/assets/js/38.3cbf1a17.js"><link rel="prefetch" href="/assets/js/39.188ebc83.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.165020ba.js"><link rel="prefetch" href="/assets/js/41.a40ec333.js"><link rel="prefetch" href="/assets/js/42.c4ace19d.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/6.aea33451.js"><link rel="prefetch" href="/assets/js/7.0ac51d9c.js"><link rel="prefetch" href="/assets/js/8.9f478d04.js"><link rel="prefetch" href="/assets/js/9.9aca80aa.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/webpack/" class="nav-link">《webpack》</a></li><li class="dropdown-subitem"><a href="/note/typescript/" class="nav-link">《typescript》</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/pages/0e0a31/" class="sidebar-link">基础类型</a></li><li><a href="/pages/e2b64b/" class="sidebar-link">类型断言、类型声明</a></li><li><a href="/pages/0bf0cc/" aria-current="page" class="active sidebar-link">枚举、函数、类、装饰器</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/7f3e5a/" class="sidebar-link">联合类型&amp;交叉类型、泛型、类型保护、类型推断</a></li><li><a href="/pages/0d3f78/" class="sidebar-link">模块、命名空间</a></li><li><a href="/pages/8cab05/" class="sidebar-link">tsc 指令，ts配置</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/categories/?category=%E3%80%8Atypescript%E3%80%8B%E7%AC%94%E8%AE%B0" title="分类" data-v-0c557b5e>《typescript》笔记</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-04-14</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">枚举、函数、类、装饰器<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h3 id="枚举-enum"><a href="#枚举-enum" class="header-anchor">#</a> 枚举: enum</h3> <p>数字枚举</p> <div class="language- extra-class"><pre class="language-text"><code>enum Status {
+    Uploading,
+    Success,
+    Failed = 8
+}
+
+console.log(Status.Uploading)  // 0
+console.log(Status.Success) // 1
+console.log(Status.Failed) // 8
+
+enum Status {
+    Uploading = 3,
+    Success,
+    Failed = 8
+}
+
+console.log(Status.Uploading)  // 3
+console.log(Status.Success) // 4
+console.log(Status.Failed) // 8
+</code></pre></div><ul><li>如果没有初始化，默认初始化值为0，每项+1</li> <li>如果有初始化，则在初始化值的基础上，每项+1</li></ul> <p>字符串枚举</p> <ul><li>每个成员必须用字符串文字或其他字符串枚举成员进行常量初始化，否则会报Error：Enum member must have initializer</li></ul> <div class="language- extra-class"><pre class="language-text"><code>enum Status {
+    Uploading = 'Uploading',
+    Success = 'Success',
+    Failed = 'Failed'
+}
+
+console.log(Status.Uploading)
+console.log(Status.Success)
+console.log(Status.Failed)
+</code></pre></div><p>异构枚举</p> <ul><li>不建议使用</li></ul> <div class="language- extra-class"><pre class="language-text"><code>enum BooleanLikeHeterogeneousEnum {
+    No = 0,
+    Yes = &quot;YES&quot;,
+}
+</code></pre></div><p>反向映射</p> <ul><li>一个枚举被编译成一个存储forward（name- &gt; value）和reverse（value- &gt; name）映射的对象</li></ul> <div class="language- extra-class"><pre class="language-text"><code>enum Enum {
+    A
+  }
+const a = Enum.A; // 0
+const nameOfA = Enum[a]; // &quot;A&quot;
+
+ &lt;!-- var Enum;
+(function (Enum) {
+  Enum[Enum[&quot;A&quot;] = 0] = &quot;A&quot;;
+})(Enum || (Enum = {})); --&gt;
+
+</code></pre></div><p>常数枚举</p> <div class="language- extra-class"><pre class="language-text"><code>const enum Directions {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+const directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+console.log(directions)
+&lt;!--会被编译成 var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */]; --&gt;
+</code></pre></div><h3 id="函数"><a href="#函数" class="header-anchor">#</a> 函数</h3> <p>可以声明具名函数和匿名函数</p> <div class="language- extra-class"><pre class="language-text"><code>function fn(x) { // 名字为b的函数
+  return x;
+}
+const fn1 = function (x) { // 没有名字的函数声明，直接将函数值赋给变量b1
+  return x;
+}
+</code></pre></div><p>函数的类型包含参数类型和返回值类型两个部分. 可选参数名必需放在必传的参数后面</p> <div class="language- extra-class"><pre class="language-text"><code>- this
+
+返回一个函数：
+</code></pre></div><p>const fn2: (y: number) =&gt; number = function (x: number): number {
+return x;
+}</p> <div class="language- extra-class"><pre class="language-text"><code>
+const b14 = {
+  m1: 1,
+  m2: function (): () =&gt; void { // 返回一个函数
+    return function (): void {
+      console.log(this.m1);
+    };
+  },
+}
+
+b14.m2()(); // 打印：undefined
+</code></pre></div><p>这里的this是window对象（如果是严格模式的话，this为undefined），因为返回一个函数再执行，相当于在顶层作用域下执行：</p> <div class="language- extra-class"><pre class="language-text"><code>function (): void {
+  console.log(this.m1); // 打印：undefined
+};
+</code></pre></div><p>解决方案：
+使用箭头函数解决这个问题，因为箭头函数捕获函数创建时候的this而不是函数调用时的this。</p> <div class="language- extra-class"><pre class="language-text"><code>const b14 = {
+  m1: 1,
+  m2: function (): () =&gt; void { // 返回一个函数
+    return (): void =&gt; {
+      console.log(this.m1);
+    };
+  },
+}
+b14.m2()(); // 打印：1
+
+// 这里的this就是函数创建时候的this，即b14对象
+</code></pre></div><p>传递一个函数作为参数：
+打开noImplicitThis配置，在使用隐含any类型的this的时候会报错。打开noImplicitThis配置之后，下面这段代码，this的位置会报错：</p> <div class="language- extra-class"><pre class="language-text"><code>const b15 = {
+  m1: 1,
+  m2: function (x: () =&gt; void): void { // 将函数作为一个参数
+    x();
+  },
+};
+
+const b16 = function (): void {
+  console.log(this.m1);
+}
+
+b15.m2(b16); // 打印：undefined
+</code></pre></div><h3 id="类"><a href="#类" class="header-anchor">#</a> 类</h3> <ul><li>类可以从基类继承属性和方法。</li> <li>public、private、protected是类成员的三个修饰符。分别表示公有成员、私有成员、被保护的成员。</li> <li>TypeScript 3.8 带来了私有字段，私有字段以#符号开头</li> <li>每个私有字段名称都唯一地作用于其包含的类。</li> <li>【private修饰符修饰的私有成员】和【前面加上#表示的私有字段】都只能在包含它们的类中被访问。前者能修饰方法和属性，后者只能表示属性不能表示方法。</li> <li>protected成员不能被派生类的实例访问</li> <li>构造函数被标记为protected，这意味着这个类不能在包含它的类外面被实例化，但是可以被扩展.</li></ul> <div class="language- extra-class"><pre class="language-text"><code>class C11 {
+  protected m1: number = 123;
+}
+
+class C12 extends C11 {
+  m2(): void {
+    console.log(this.m1);
+  }
+}
+
+const c12 = new C12();
+c12.m2(); // 打印：123
+c12.m1; // 报错：属性“m1”受保护，只能在类“C11”及其子类中访问.
+
+class C13 {
+  m1: number;
+  protected constructor(x) {
+    this.m1 = x;
+  }
+}
+
+class C14 extends C13 {
+  constructor(x) {
+    super(x);
+  }
+}
+
+const c13 = new C13(1); // 报错：类“C13”的构造函数是受保护的，仅可在类声明中访问
+const c14 = new C14(1);
+console.log(c14.m1); // 打印：1
+</code></pre></div><h3 id="装饰器"><a href="#装饰器" class="header-anchor">#</a> 装饰器 @</h3> <ul><li>每个装饰器的表达式从上到下进行评估，然后结果被称为从下到上的函数。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>function setName() {
+    console.log('get setName');
+    return (target: any) =&gt; {
+        console.log(target, 'setName');
+    }
+}
+function setAge() {
+    console.log('get setAge');
+    return (target: any) =&gt; {
+        console.log(target, 'setAge');
+    }
+}
+
+@setName()
+@setAge()
+
+// 执行结果为
+// get setName
+// get setAge
+// setAge
+// setAge
+</code></pre></div><h4 id="类装饰器"><a href="#类装饰器" class="header-anchor">#</a> 类装饰器</h4> <div class="language- extra-class"><pre class="language-text"><code>function addName(constructor: new() =&gt; any) {
+    constructor.prototype.name = 'liston';
+}
+@addName
+class ClassD {}
+interface ClassD {
+    name: string
+}
+// 接口添加到 类的原型对象上，注意：interface需要在class 之后添加
+const d = new ClassD();
+console.log(d, 'ClassD')
+console.log(d.name)
+</code></pre></div><h4 id="方法装饰器"><a href="#方法装饰器" class="header-anchor">#</a> 方法装饰器</h4> <p>在一个方法声明前被声明，装饰器应用到方法的属性描述符上，并且可以用来观察、修改、或者替代一个方法定义。一个方法装饰器不能被用在声明文件中、重载中、或者在任何环境上下文（比如declare类）中
+方法装饰器的表达式在运行时作为一个函数调用，包含三个参数：</p> <ol><li>target：对于静态成员，是类的构造函数；对于实例成员，是类的原型（prototype）。</li> <li>propertyKey：成员的名称。</li> <li>descriptor：成员的属性描述符。（注意：属性描述符在你的脚本目标小于ES5的时候会是undefined）</li></ol> <p>属性描述符：</p> <div class="language- extra-class"><pre class="language-text"><code>interface PropertyDescriptor {
+    configurable?: boolean;
+    enumerable?: boolean;
+    value?: any;
+    writable?: boolean;
+    get?(): any;
+    set?(v: any): void;
+}
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>class C26 {
+  @writable(false)
+  m1() {
+    console.log(&quot;aaa&quot;);
+  }
+}
+
+function writable(x: boolean) {
+  return function (
+    target: any,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    return {
+      writable: false,
+    };
+  };
+}
+
+const c26 = new C26();
+c26.m1 = () =&gt; {
+  console.log(&quot;bbb&quot;);
+};
+// ERROR: decorators.ts:123 Uncaught TypeError: Cannot assign to read only property 'm1' of object '#&lt;C26&gt;'...
+</code></pre></div><h4 id="存取器装饰器"><a href="#存取器装饰器" class="header-anchor">#</a> 存取器装饰器</h4> <ul><li>存取器装饰器应用在存取器的属性描述符</li></ul> <div class="custom-block tip"><p class="custom-block-title">注意：</p> <p>TypeScript不允许同时装饰成员的get和set存取器。该成员的所有装饰器必须应用到文档顺序的第一个存取器。这是因为装饰器应用于属性描述符，属性描述符将get和set存取器组合在一起，而不是分开声明。否则会报Error：Decorators cannot be applied to multiple get/set accessors of the same name</p></div> <h4 id="属性装饰器"><a href="#属性装饰器" class="header-anchor">#</a> 属性装饰器</h4> <ul><li>属性装饰器在一个属性声明前声明。一个属性装饰器不能用在一个声明文件中，或者任何其他的环境上下文（比如一个declare类）中</li> <li>属性装饰器的表达式会作为一个函数在运行时被调用，使用以下两个参数：</li></ul> <p>1.target: 对于静态成员来说是类的构造函数，对于实例成员来说是类的原型。</p> <p>2.propertyKey: 成员的名字。</p> <div class="custom-block tip"><p class="custom-block-title">注意：</p> <p>因为TypeScript中初始化属性装饰器的机制，一个属性描述符不能用作一个属性装饰器的参数。这是因为目前当定义原型的成员的时候，没有机制来描述一个实例属性，并且没有办法来观察或者修改属性的初始化。返回值也被忽视了。因此，一个属性装饰器只能用来观察类中已经明确声明了一个名字的属性</p></div> <h4 id="参数装饰器-babel-暂不支持"><a href="#参数装饰器-babel-暂不支持" class="header-anchor">#</a> 参数装饰器(babel 暂不支持)</h4> <p>参数装饰器在参数声明前被声明。参数装饰器应用于类的构造函数声明或方法声明。参数装饰器不能用在声明文件中、重载中、或者在任何其他环境上下文（比如一个declare类）中。</p> <p>参数装饰器的会作为函数在运行时被调用，带着以下三个参数</p> <ol><li>target: 对于静态成员，是类的构造函数；对于实例成员，是类的原型（prototype）。</li> <li>propertyKey: 成员的名称。</li> <li>parameterIndex: 函数的参数列表中参数的序号索引。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>class C29 {
+  m1 (@decoratorC29 x: number) {
+    console.log(x);
+  }
+
+  m2 () {
+    console.log('456');
+  }
+}
+
+function decoratorC29 (
+  target: any,
+  propertyKey: string | symbol,
+  parameterIndex: number
+) {
+  target.m2();
+}
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/e2b64b/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">类型断言、类型声明</div></a> <a href="/pages/7f3e5a/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">联合类型&amp;交叉类型、泛型、类型保护、类型推断</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/e2b64b/" class="prev">类型断言、类型声明</a></span> <span class="next"><a href="/pages/7f3e5a/">联合类型&amp;交叉类型、泛型、类型保护、类型推断</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/e4d971/"><div>
+            react 16 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/c4a159/"><div>
+            react 17 更新特性
+            <!----></div></a> <span class="date">04-22</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/f67937/"><div>
+            Concurrent Mode
+            <!----></div></a> <span class="date">04-22</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2d4fb2e4.js" defer></script><script src="/assets/js/2.42c531b5.js" defer></script><script src="/assets/js/31.c45ece3b.js" defer></script>
+  </body>
+</html>
