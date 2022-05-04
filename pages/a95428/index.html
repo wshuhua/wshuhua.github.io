@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>进程 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.faf25a8f.css" as="style"><link rel="preload" href="/assets/js/app.2e996b91.js" as="script"><link rel="preload" href="/assets/js/2.dc8a2400.js" as="script"><link rel="preload" href="/assets/js/22.784cdbd1.js" as="script"><link rel="prefetch" href="/assets/js/10.57255fdd.js"><link rel="prefetch" href="/assets/js/11.9356ed36.js"><link rel="prefetch" href="/assets/js/12.d92bc231.js"><link rel="prefetch" href="/assets/js/13.0cdc8878.js"><link rel="prefetch" href="/assets/js/14.4b8dda72.js"><link rel="prefetch" href="/assets/js/15.a8a0fafc.js"><link rel="prefetch" href="/assets/js/16.5bdcfbc9.js"><link rel="prefetch" href="/assets/js/17.b6e884a5.js"><link rel="prefetch" href="/assets/js/18.fdf642df.js"><link rel="prefetch" href="/assets/js/19.8ed20b29.js"><link rel="prefetch" href="/assets/js/20.d61f2e18.js"><link rel="prefetch" href="/assets/js/21.357d4d0b.js"><link rel="prefetch" href="/assets/js/23.e3f7e442.js"><link rel="prefetch" href="/assets/js/24.3e791285.js"><link rel="prefetch" href="/assets/js/25.19abad5d.js"><link rel="prefetch" href="/assets/js/26.1f77611f.js"><link rel="prefetch" href="/assets/js/27.63736e1b.js"><link rel="prefetch" href="/assets/js/28.20af48b9.js"><link rel="prefetch" href="/assets/js/29.69d3a345.js"><link rel="prefetch" href="/assets/js/3.43537c17.js"><link rel="prefetch" href="/assets/js/30.f1ee2294.js"><link rel="prefetch" href="/assets/js/31.381c97b4.js"><link rel="prefetch" href="/assets/js/32.d4b8380a.js"><link rel="prefetch" href="/assets/js/33.a78c4fbe.js"><link rel="prefetch" href="/assets/js/34.0f3cd449.js"><link rel="prefetch" href="/assets/js/35.33554918.js"><link rel="prefetch" href="/assets/js/36.299f01b2.js"><link rel="prefetch" href="/assets/js/37.12d234d0.js"><link rel="prefetch" href="/assets/js/38.d2164879.js"><link rel="prefetch" href="/assets/js/39.5e6eab37.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.b3e3110f.js"><link rel="prefetch" href="/assets/js/41.ecfb8304.js"><link rel="prefetch" href="/assets/js/42.16f361c8.js"><link rel="prefetch" href="/assets/js/43.faa29e08.js"><link rel="prefetch" href="/assets/js/44.0bc6367a.js"><link rel="prefetch" href="/assets/js/45.7e9cd941.js"><link rel="prefetch" href="/assets/js/46.a805fa43.js"><link rel="prefetch" href="/assets/js/47.c472f757.js"><link rel="prefetch" href="/assets/js/48.7338f78b.js"><link rel="prefetch" href="/assets/js/49.5a6f4446.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/50.bb80eb35.js"><link rel="prefetch" href="/assets/js/51.82d3fcea.js"><link rel="prefetch" href="/assets/js/52.168eb36e.js"><link rel="prefetch" href="/assets/js/53.380a1acc.js"><link rel="prefetch" href="/assets/js/54.617f6dc1.js"><link rel="prefetch" href="/assets/js/55.e1661fdd.js"><link rel="prefetch" href="/assets/js/56.13d9db28.js"><link rel="prefetch" href="/assets/js/57.7b48a8a1.js"><link rel="prefetch" href="/assets/js/58.5dbdf031.js"><link rel="prefetch" href="/assets/js/59.a9c576a9.js"><link rel="prefetch" href="/assets/js/6.9073f8bb.js"><link rel="prefetch" href="/assets/js/60.3b9fee2f.js"><link rel="prefetch" href="/assets/js/61.8fbb60eb.js"><link rel="prefetch" href="/assets/js/62.3015de6e.js"><link rel="prefetch" href="/assets/js/7.733f78a6.js"><link rel="prefetch" href="/assets/js/8.77d48f5d.js"><link rel="prefetch" href="/assets/js/9.84cabc87.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.faf25a8f.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>构建工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>测试框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>node</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/2586cb/" class="sidebar-link">node介绍</a></li><li><a href="/pages/5d2c54/" class="sidebar-link">模块机制</a></li><li><a href="/pages/1b14a3/" class="sidebar-link">异步I/O操作</a></li><li><a href="/pages/ec8dfa/" class="sidebar-link">异步编程</a></li><li><a href="/pages/4fe0f1/" class="sidebar-link">内存控制</a></li><li><a href="/pages/84c133/" class="sidebar-link">理解Buffer</a></li><li><a href="/pages/5d721b/" class="sidebar-link">网络编程</a></li><li><a href="/pages/a95428/" aria-current="page" class="active sidebar-link">进程</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>devops</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/technology/#前端工程化" data-v-0c557b5e>前端工程化</a></li><li data-v-0c557b5e><a href="/technology/#node" data-v-0c557b5e>node</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-05-04</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">进程<!----></h1> <!----> <div class="theme-vdoing-content content__default"><ol><li><p>如今CPU基本均是多核的，真正的服务器往往还有多个CPU。一个Node进程只能利用一个核，这将抛出Node实际应用的第一个问题：如何充分利用多核CPU服务器？</p></li> <li><p>由于Node执行在单线程上，一旦单线程上抛出的异常没有被捕获，将会引起整个进程的崩溃。这给Node的实际应用抛出了第二个问题：如何保证进程的健壮性和稳定性？</p></li></ol> <h3 id="_01-服务模型的变迁"><a href="#_01-服务模型的变迁" class="header-anchor">#</a> 01. 服务模型的变迁</h3> <pre>01.同步 -&gt; 02.复制进程 -&gt; 03.多线程 -&gt; 04.事件驱动</pre> <h3 id="_02-多进程架构"><a href="#_02-多进程架构" class="header-anchor">#</a> 02. 多进程架构</h3> <p>面对单进程单线程对多核使用不足的问题，前人的经验是启动多进程即可。理想状态下每个进程各自利用一个CPU，以此实现多核CPU的利用。Node提供了<code>child_process</code>模块，并且也提供了<code>child_process.fork()</code>函数供我们实现进程的复制。</p> <div class="language- extra-class"><pre class="language-text"><code>// work.js
+var http = require('http');
+http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/plain'});
+ res.end('Hello World\n');
+}).listen(Math.round((1 + Math.random()) * 1000), '127.0.0.1');
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// master.js
+var fork = require('child_process').fork;
+var cpus = require('os').cpus();
+for (var i = 0; i &lt; cpus.length; i++) {
+ fork('./worker.js');
+} 
+</code></pre></div><p><code>ps aux | grep worker.js</code> 查看到进程的数量，如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>wsh    7597   0.0  0.0 408121728   1392 s005  S+    5:19下午   0:00.00 grep work.js
+wsh    7546   0.0  1.0  8939348  84048 s004  S+    5:16下午   0:00.08 /usr/local/bin/node ./work.js
+wsh    7545   0.0  1.0  9349204  84928 s004  S+    5:16下午   0:00.09 /usr/local/bin/node ./work.js
+wsh    7544   0.0  1.0  8964148  84672 s004  S+    5:16下午   0:00.08 /usr/local/bin/node ./work.js
+wsh    7543   0.0  1.0  9095252  82704 s004  S+    5:16下午   0:00.09 /usr/local/bin/node ./work.js
+wsh    7542   0.0  1.0  8963924  82880 s004  S+    5:16下午   0:00.09 /usr/local/bin/node ./work.js
+wsh    7541   0.0  1.0  8963924  85488 s004  S+    5:16下午   0:00.09 /usr/local/bin/node ./work.js
+wsh    7540   0.0  1.0  9095252  83472 s004  S+    5:16下午   0:00.09 /usr/local/bin/node ./work.js
+wsh    7539   0.0  1.0  8963924  83856 s004  S+    5:16下午   0:00.10 /usr/local/bin/node ./work.js
+wsh    7515   0.0  1.0  8964180  84464 s007  S+    5:16下午   0:00.12 node work.js
+</code></pre></div><p>Master-Worker模式又称主从模式。图中的进程分为两种：主进程和工作进程。
+这是典型的分布式架构中用于并行处理业务的模式，具备较好的可伸缩性和稳定性。</p> <ul><li>主进程不负责具体的业务处理，而是负责调度或管理工作进程，它是趋向于稳定的。</li> <li>工作进程负责具体的业务处理，因为业务的多种多样，甚至一项业务由多人开发完成，所以工作进程的稳定性值得开发者关注。</li></ul> <p>Master-Worker模式:
+<img src="/images/node/Master-Worker%E6%A8%A1%E5%BC%8F.png" alt=""></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>通过fork()复制的进程都是一个独立的进程，这个进程中有着独立而全新的V8实例。它需要
+至少30毫秒的启动时间和至少10 MB的内存</p></div> <h4 id="创建子进程"><a href="#创建子进程" class="header-anchor">#</a> 创建子进程</h4> <p><code>child_process</code>模块给予Node可以随意创建子进程（child_process）的能力。它提供了4个方法用于创建子进程。</p> <ul><li>spawn()：启动一个子进程来执行命令。</li> <li>exec()：启动一个子进程来执行命令，与spawn()不同的是其接口不同，它有一个回调函数获知子进程的状况。</li> <li>execFile()：启动一个子进程来执行可执行文件。</li> <li>fork()：与spawn()类似，不同点在于它创建Node的子进程只需指定要执行的JavaScript文件模块即可。</li></ul> <p>spawn()与exec()、execFile()不同的是，后两者创建时可以指定timeout属性设置超时时间，一旦创建的进程运行超过设定的时间将会被kill。
+exec()与execFile()不同的是，exec()适合执行已有的命令，execFile()适合执行文件。</p> <div class="language- extra-class"><pre class="language-text"><code>var cp = require('child_process');
+cp.spawn('node', ['worker.js']);
+cp.exec('node worker.js', function (err, stdout, stderr) {
+ // some code
+});
+cp.execFile('worker.js', function (err, stdout, stderr) {
+ // some code
+});
+cp.fork('./worker.js'); 
+</code></pre></div><p>4种方法的差别:
+<img src="/images/node/4%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9A%84%E5%B7%AE%E5%88%AB.png" alt=""></p> <p>这里的可执行文件是指可以直接执行的文件，如果是JavaScript文件通过execFile()运行，它的首行内容必须添加如下代码：</p> <div class="language- extra-class"><pre class="language-text"><code>#!/usr/bin/env node 
+</code></pre></div><h4 id="进程间通信"><a href="#进程间通信" class="header-anchor">#</a> 进程间通信</h4> <p>在前端浏览器中，JavaScript主线程与UI渲染共用同一个线程。执行JavaScript的时候UI渲染是停滞的，渲染UI时，JavaScript是停滞的，两者互相阻塞。长时间执行JavaScript将会造成UI停顿不响应。为了解决这个问题，HTML5提出了WebWorker API。WebWorker允许创建工作线程并在后台运行，使得一些阻塞较为严重的计算不影响主线程上的UI渲染。</p> <p>WebWorker API：
+主线程与工作线程之间通过onmessage()和postMessage()进行通信，子进程对象则由send()方法实现主进程向子进程发送数据，message事件实现收听子进程发来的数据</p> <p>Node中</p> <div class="language- extra-class"><pre class="language-text"><code>// parent.js
+var cp = require('child_process');
+var n = cp.fork(__dirname + '/sub.js');
+n.on('message', function (m) {
+ console.log('PARENT got message:', m);
+});
+n.send({hello: 'world'});
+// sub.js
+process.on('message', function (m) {
+ console.log('CHILD got message:', m);
+});
+process.send({foo: 'bar'}); 
+// node parent.js
+输出结果：
+PARENT got message: { foo: 'bar' }
+CHILD got message: { hello: 'world' }
+</code></pre></div><p>通过fork()或者其他API，创建子进程之后，为了实现父子进程之间的通信，父进程与子进程之间将会创建IPC通道。通过IPC通道，父子进程之间才能通过message和send()传递消息。</p> <h5 id="进程间通信原理"><a href="#进程间通信原理" class="header-anchor">#</a> 进程间通信原理</h5> <p>IPC的全称是Inter-Process Communication，即进程间通信。进程间通信的目的是为了让不同的进程能够互相访问资源并进行协调工作。
+Node中实现IPC通道的是管道（pipe）技术</p> <p><img src="/images/node/IPC%E5%88%9B%E5%BB%BA%E5%92%8C%E5%AE%9E%E7%8E%B0%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <p>父进程在实际创建子进程之前，会创建IPC通道并监听它，然后才真正创建出子进程，并通过环境变量（NODE_CHANNEL_FD）告诉子进程这个IPC通道的文件描述符。子进程在启动的过程中，
+根据文件描述符去连接这个已存在的IPC通道，从而完成父子进程之间的连接。</p> <p><img src="/images/node/%E5%88%9B%E5%BB%BAIPC%E7%AE%A1%E9%81%93%E7%9A%84%E6%AD%A5%E9%AA%A4%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>只有启动的子进程是Node进程时，子进程才会根据环境变量去连接IPC通道，对于其他类型
+的子进程则无法实现进程间通信，除非其他进程也按约定去连接这个已经创建好的IPC通道。</p></div> <h4 id="句柄传递"><a href="#句柄传递" class="header-anchor">#</a> 句柄传递</h4> <p>多个进程监听同一个端口的，提示端口被占用解决方案：
+让每个进程监听不同的端口，其中主进程监听主端口（如80），主进程对外接收所有的网络请求，再将这些请求分别代理
+到不同的端口的进程上。</p> <p>主进程接收、分配网络请求的示意图:
+<img src="/images/node/%E4%B8%BB%E8%BF%9B%E7%A8%8B%E6%8E%A5%E6%94%B6%E3%80%81%E5%88%86%E9%85%8D%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <ul><li><p>优点：
+通过代理，可以避免端口不能重复监听的问题，甚至可以在代理进程上做适当的负载均衡，使得每个子进程可以较为均衡地执行任务。</p></li> <li><p>缺点：
+由于进程每接收到一个连接，将会用掉一个文件描述符，因此代理方案中客户端连接到代理进程，代理进程连接到工作进程的过程需要用掉两个文件描述符。操作系统的文件描述符是有限的，代理方案浪费掉一倍数量的文件描述符的做法影响了系统的扩展能力。</p></li></ul> <h5 id="句柄概念"><a href="#句柄概念" class="header-anchor">#</a> 句柄概念</h5> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>句柄是一种可以用来标识资源的引用，它的内部包含了指向对象的文件描述符。比如句柄可以用来标识一个服务器端socket对象、一个客户端socket对象、一个UDP套接字、一个管道等。</p></div> <p>为了解决上述这样的问题，Node在版本v0.5.9引入了进程间发送句柄的功能send()方法除了能通过IPC（进程间通信）发送数据外，还能发送句柄，第二个可选参数就是句柄，如下所示：
+child.send(message, [sendHandle])</p> <div class="language- extra-class"><pre class="language-text"><code>// parent.js
+var cp = require('child_process'); 
+var child1 = cp.fork('child.js');
+var child2 = cp.fork('child.js');
+// Open up the server object and send the handle
+var server = require('net').createServer();
+server.listen(1337, function () {
+ child1.send('server', server);
+ child2.send('server', server);
+ // 关掉
+ server.close();
+});
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// child.js
+var http = require('http');
+var server = http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/plain'});
+ res.end('handled by child, pid is ' + process.pid + '\n');
+});
+process.on('message', function (m, tcp) {
+ if (m === 'server') {
+ tcp.on('connection', function (socket) {
+ server.emit('connection', socket);
+ });
+ }
+}); 
+</code></pre></div><p>主进程将请求发送给工作进程：
+<img src="/images/node/%E4%B8%BB%E8%BF%9B%E7%A8%8B%E5%B0%86%E8%AF%B7%E6%B1%82%E5%8F%91%E9%80%81%E7%BB%99%E5%B7%A5%E4%BD%9C%E8%BF%9B%E7%A8%8B.png" alt=""></p> <p>主进程发送完句柄并关闭监听(server.close())之后，成为了如图所示的结构</p> <p><img src="/images/node/%E4%B8%BB%E8%BF%9B%E7%A8%8B%E5%8F%91%E9%80%81%E5%AE%8C%E5%8F%A5%E6%9F%84%E5%B9%B6%E5%85%B3%E9%97%AD%E7%9B%91%E5%90%AC%E5%90%8E%E7%9A%84%E7%BB%93%E6%9E%84.png" alt=""></p> <p>目前子进程对象send()方法可以发送的句柄类型包括如下几种。</p> <ul><li>net.Socket。TCP套接字。</li> <li>net.Server。TCP服务器，任意建立在TCP服务上的应用层服务都可以享受到它带来的
+好处。</li> <li>net.Native。C++层面的TCP套接字或IPC管道。</li> <li>dgram.Socket。UDP套接字。</li> <li>dgram.Native。C++层面的UDP套接字。
+send()方法在将消息发送到IPC管道前，将消息组装成两个对象，一个参数是handle，另一个
+是message。message参数如下所示：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>{
+ cmd: 'NODE_HANDLE',
+ type: 'net.Server',
+ msg: message
+} 
+</code></pre></div><p>发送到IPC管道中的实际上是我们要发送的<code>句柄文件描述符</code>，文件描述符实际上是一个整数值。这个message对象在写入到IPC管道时也会通过JSON.stringify()进行序列化。所以最终发送到IPC通道中的信息都是字符串，send()方法能发送消息和句柄并不意味着它能发送任意对象。</p> <p>连接了IPC通道的子进程可以读取到父进程发来的消息，将字符串通过JSON.parse()解析还原为对象后，才触发message事件将消息体传递给应用层使用。在这个过程中，消息对象还要被
+进行过滤处理，message.cmd的值如果以<code>NODE_为前缀</code>，它将响应一个内部事件<code>internalMessage</code>。如果message.cmd值为NODE_HANDLE，它将取出message.type值和得到的文件描述符一起还原出一个对应的对象。</p> <p>句柄的发送与还原示意图:
+<img src="/images/node/%E5%8F%A5%E6%9F%84%E7%9A%84%E5%8F%91%E9%80%81%E4%B8%8E%E8%BF%98%E5%8E%9F%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <ol start="2"><li>端口共同监听</li></ol> <p>为何通过发送句柄后，多个进程可以监听到相同的端口而不引起EADDRINUSE异常?</p> <p>我们独立启动的进程中，<code>TCP服务器端socket套接字的文件描述符</code>并不相同，导致监听到相同的端口时会抛出异常。
+Node底层对每个端口监听都设置了<code>SO_REUSEADDR</code>选项，这个选项的涵义是不同进程可以就相
+同的网卡和端口进行监听，这个服务器端套接字可以被不同的进程复用，如下所示：
+setsockopt(tcp-&gt;io_watcher.fd, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on))</p> <p>由于独立启动的进程互相之间并不知道文件描述符，所以监听相同端口时就会失败。但对于send()发送的句柄还原出来的服务而言，它们的文件描述符是相同的，所以监听相同端口不会引
+起异常。</p> <p>多个应用监听相同端口时，文件描述符同一时间只能被某个进程所用。换言之就是网络请求向服务器端发送时，只有一个幸运的进程能够抢到连接，也就是说只有它能为这个请求进行服务。
+这些进程服务是抢占式的。</p> <h3 id="_03-集群稳定之路"><a href="#_03-集群稳定之路" class="header-anchor">#</a> 03. 集群稳定之路</h3> <p>每个工作进程依然是在单线程上执行的，它的稳定性还不能得到完全的保障。我们需要建立起一个健全的机制来保障Node应用的健壮性。</p> <h4 id="进程事件"><a href="#进程事件" class="header-anchor">#</a> 进程事件</h4> <p>子进程除了send()方法和message事件外，还有如下这些事件。</p> <ul><li>error：当子进程无法被复制创建、无法被杀死、无法发送消息时会触发该事件。</li> <li>exit：子进程退出时触发该事件，子进程如果是正常退出，这个事件的第一个参数为退出码，否则为null。如果进程是通过kill()方法被杀死的，会得到第二个参数，它表示杀死进程时的信号。</li> <li>close：在子进程的标准输入输出流中止时触发该事件，参数与exit相同。</li> <li>disconnect：在父进程或子进程中调用disconnect()方法时触发该事件，在调用该方法时将关闭监听IPC通道。</li></ul> <p>通过kill()方法给子进程发送消息</p> <div class="language- extra-class"><pre class="language-text"><code>// 子进程
+child.kill([signal]);
+// 当前进程
+process.kill(pid, [signal]); 
+</code></pre></div><p>信号列表:<code>kill -l</code></p> <div class="language- extra-class"><pre class="language-text"><code>HUP INT QUIT ILL TRAP ABRT EMT FPE KILL BUS SEGV SYS PIPE ALRM TERM URG STOP TSTP CONT CHLD TTIN TTOU IO XCPU XFSZ VTALRM PROF WINCH INFO USR1 USR2
+</code></pre></div><p>Node提供了这些信号对应的信号事件，每个进程都可以监听这些信号事件。这些信号事件是用来通知进程的，每个信号事件有不同的含义，进程在收到响应信号时，应当做出约定的行为，
+如SIGTERM是软件终止信号，进程收到该信号时应当退出</p> <div class="language- extra-class"><pre class="language-text"><code>process.on('SIGTERM', function() {
+ console.log('Got a SIGTERM, exiting...');
+ process.exit(1);
+});
+console.log('server running with PID:', process.pid);
+process.kill(process.pid, 'SIGTERM'); 
+</code></pre></div><h4 id="自动启动"><a href="#自动启动" class="header-anchor">#</a> 自动启动</h4> <p>重新启动一个工作进程来继续服务:</p> <p>主进程加入子进程管理机制的示意图：
+<img src="/images/node/%E4%B8%BB%E8%BF%9B%E7%A8%8B%E5%8A%A0%E5%85%A5%E5%AD%90%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6%E7%9A%84%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <div class="language- extra-class"><pre class="language-text"><code>// master.js
+var fork = require('child_process').fork;
+var cpus = require('os').cpus();
+var server = require('net').createServer();
+server.listen(1337);
+var workers = {};
+var createWorker = function () {
+ var worker = fork(__dirname + '/worker.js');
+ // 退出时重新启动新的进程
+  worker.on('exit', function () {
+ console.log('Worker ' + worker.pid + ' exited.');
+ delete workers[worker.pid];
+ createWorker();
+ });
+ // 句柄转发
+ worker.send('server', server);
+ workers[worker.pid] = worker;
+ console.log('Create worker. pid: ' + worker.pid);
+};
+for (var i = 0; i &lt; cpus.length; i++) {
+ createWorker();
+} 
+// 进程自己退出时，让所有工作进程退出
+process.on('exit', function () {
+ for (var pid in workers) {
+ workers[pid].kill();
+ }
+});
+</code></pre></div><p>输出：</p> <div class="language- extra-class"><pre class="language-text"><code>Create worker. pid: 15199
+Create worker. pid: 15200
+Create worker. pid: 15201
+Create worker. pid: 15202
+Create worker. pid: 15203
+Create worker. pid: 15204
+Create worker. pid: 15205
+Create worker. pid: 15206
+</code></pre></div><p><code>kill 15199</code>: 15199进程退出后，自动启动了一个新的工作进程30518，总体进程数量并没有发生改变</p> <div class="language- extra-class"><pre class="language-text"><code>Create worker. pid: 15199
+Create worker. pid: 15200
+Create worker. pid: 15201
+Create worker. pid: 15202
+Create worker. pid: 15203
+Create worker. pid: 15204
+Create worker. pid: 15205
+Create worker. pid: 15206
+Worker 15199 exited.
+Create worker. pid: 15223
+</code></pre></div><h5 id="自杀信号"><a href="#自杀信号" class="header-anchor">#</a> 自杀信号</h5> <p>进程的自杀和重启:</p> <p>主进程将重启工作进程的任务，从exit事件的处理函数中转移到message事件的处理函数中，</p> <div class="language- extra-class"><pre class="language-text"><code>var createWorker = function () {
+ var worker = fork(__dirname + '/worker.js');
+ // 启动新的进程
+ worker.on('message', function (message) {
+ if (message.act === 'suicide') {
+ createWorker();
+ }
+ });
+ worker.on('exit', function () {
+ console.log('Worker ' + worker.pid + ' exited.');
+  delete workers[worker.pid];
+ });
+ worker.send('server', server);
+ workers[worker.pid] = worker;
+ console.log('Create worker. pid: ' + worker.pid);
+}; 
+</code></pre></div><p><img src="/images/node/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%87%AA%E6%9D%80%E5%92%8C%E9%87%8D%E5%90%AF.png" alt=""></p> <h5 id="限量重启"><a href="#限量重启" class="header-anchor">#</a> 限量重启</h5> <p>了完成限量重启的统计，我们引入一个队列来做标记，在每次重启工作进程之间进行打点并判断重启是否太过频繁</p> <div class="language- extra-class"><pre class="language-text"><code>// 重启次数
+var limit = 10; 
+// 时间单位
+var during = 60000;
+var restart = [];
+var isTooFrequently = function () {
+ // 记录重启时间
+ var time = Date.now();
+ var length = restart.push(time);
+ if (length &gt; limit) {
+ // 取出最后10个记录
+ restart = restart.slice(limit * -1);
+ }
+ // 最后一次重启到前10次重启之间的时间间隔
+ return restart.length &gt;= limit &amp;&amp; restart[restart.length - 1] - restart[0] &lt; during;
+};
+var workers = {};
+var createWorker = function () {
+ // 检查是否太过频繁
+ if (isTooFrequently()) {
+ // 触发giveup事件后，不再重启
+ process.emit('giveup', length, during);
+ return;
+ }
+ var worker = fork(__dirname + '/worker.js');
+ worker.on('exit', function () {
+ console.log('Worker ' + worker.pid + ' exited.');
+ delete workers[worker.pid];
+ });
+ // 重新启动新的进程
+ worker.on('message', function (message) {
+ if (message.act === 'suicide') {
+ createWorker();
+ }
+ });
+ // 句柄转发
+ worker.send('server', server);
+ workers[worker.pid] = worker;
+ console.log('Create worker. pid: ' + worker.pid);
+}; 
+</code></pre></div><h4 id="负载均衡"><a href="#负载均衡" class="header-anchor">#</a> 负载均衡</h4> <p>在多进程之间监听相同的端口，使得用户请求能够分散到多个进程上进行处理，这带来的好处是可以将CPU资源都调用起来。保证多个处理单元工作量公平的策略叫负载均衡。</p> <p>Node默认提供的机制是采用操作系统的抢占式策略。所谓的抢占式就是在一堆工作进程中，闲着的进程对到来的请求进行争抢，谁抢到谁服务。</p> <p>Node在 v0.11中提供了一种新的策略使得负载均衡更合理，这种新的策略叫<code>Round-Robin，又叫轮叫调度</code>。轮叫调度的工作方式是由主进程接受连接，将其依次分发给工作
+进程。分发的策略是在N个工作进程中，每次选择第i = (i + 1) mod n个进程来发送连接。在cluster模块中启用它的方式如下：
+// 启用Round-Robin
+cluster.schedulingPolicy = cluster.SCHED_RR
+// 不启用Round-Robin
+cluster.schedulingPolicy = cluster.SCHED_NONE</p> <h4 id="状态共享"><a href="#状态共享" class="header-anchor">#</a> 状态共享</h4> <ol><li>第三方数据存储:</li></ol> <p>解决数据共享最直接、简单的方式就是通过第三方来进行数据存储，比如将数据存放到数据库、磁盘文件、缓存服务（如Redis）中，所有工作进程启动时将其读取进内存中。但这种方式
+存在的问题是如果数据发生改变，还需要一种机制通知到各个子进程，使得它们的内部状态也得到更新。</p> <p>实现状态同步的机制有两种:</p> <ul><li>各个子进程去向第三方进行定时轮询</li></ul> <p><img src="/images/node/%E5%AE%9A%E6%97%B6%E8%BD%AE%E8%AF%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <ul><li>主动通知:
+当数据发生更新时，主动通知子进程。当然，即使是主动通知，也需要一种机制来及时获取数据的改变。这个过程仍然不能脱离轮询，但我们可以减少轮询的进程数量，
+我们将这种用来发送通知和查询状态是否更改的进程叫做通知进程。为了不混合业务逻辑，可以将这个进程设计为只进行轮询和通知，不处理任何业务逻辑</li></ul> <p><img src="/images/node/%E4%B8%BB%E5%8A%A8%E9%80%9A%E7%9F%A5%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <h3 id="_04-cluster-模块"><a href="#_04-cluster-模块" class="header-anchor">#</a> 04. Cluster 模块</h3> <p>以解决多核CPU的利用率问题</p> <p>创建Node进程集群</p> <div class="language- extra-class"><pre class="language-text"><code>// cluster.js
+var cluster = require('cluster');
+cluster.setupMaster({
+ exec: &quot;worker.js&quot;
+});
+var cpus = require('os').cpus();
+for (var i = 0; i &lt; cpus.length; i++) {
+ cluster.fork();
+} 
+</code></pre></div><h4 id="cluster-工作原理"><a href="#cluster-工作原理" class="header-anchor">#</a> Cluster 工作原理</h4> <p>cluster模块就是child_process和net模块的组合应用。</p> <p>cluster启动时，会在内部启动TCP服务器，在cluster.fork()子进程时，将这个TCP服务器端socket的文件描述符发送给工作进程。如果进程是通过cluster.fork()复制出来的，那么
+它的环境变量里就存在<code>NODE_UNIQUE_ID</code>，如果工作进程中存在listen()侦听网络端口的调用，它将拿到该文件描述符，通过SO_REUSEADDR端口重用，从而实现多个子进程共享端口。对于普通方式启动的进程，则不存在文件描述符传递共享等事情。</p> <p><img src="/images/node/cluster%E6%A8%A1%E5%9D%97%E5%BA%94%E7%94%A8%E4%B8%AD.png" alt=""></p> <h4 id="cluster-事件"><a href="#cluster-事件" class="header-anchor">#</a> Cluster 事件</h4> <p>对于健壮性处理，cluster模块也暴露了相当多的事件。</p> <ul><li>fork：复制一个工作进程后触发该事件。</li> <li>online：复制好一个工作进程后，工作进程主动发送一条online消息给主进程，主进程收
+到消息后，触发该事件。</li> <li>listening：工作进程中调用listen()（共享了服务器端Socket）后，发送一条listening
+消息给主进程，主进程收到消息后，触发该事件。</li> <li>disconnect：主进程和工作进程之间IPC通道断开后会触发该事件。</li> <li>exit：有工作进程退出时触发该事件。</li> <li>setup：cluster.setupMaster()执行后触发该事件。
+这些事件大多跟child_process模块的事件相关，在进程间消息传递的基础上完成的封装。
+这些事件对于增强应用的健壮性已经足够了。</li></ul></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/5d721b/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">网络编程</div></a> <a href="/pages/3f10df/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">理论</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/5d721b/" class="prev">网络编程</a></span> <span class="next"><a href="/pages/3f10df/">理论</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/5d721b/"><div>
+            网络编程
+            <!----></div></a> <span class="date">05-04</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/84c133/"><div>
+            理解Buffer
+            <!----></div></a> <span class="date">05-04</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/4fe0f1/"><div>
+            内存控制
+            <!----></div></a> <span class="date">05-03</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2e996b91.js" defer></script><script src="/assets/js/2.dc8a2400.js" defer></script><script src="/assets/js/22.784cdbd1.js" defer></script>
+  </body>
+</html>

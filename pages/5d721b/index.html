@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>网络编程 | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.faf25a8f.css" as="style"><link rel="preload" href="/assets/js/app.2e996b91.js" as="script"><link rel="preload" href="/assets/js/2.dc8a2400.js" as="script"><link rel="preload" href="/assets/js/21.357d4d0b.js" as="script"><link rel="prefetch" href="/assets/js/10.57255fdd.js"><link rel="prefetch" href="/assets/js/11.9356ed36.js"><link rel="prefetch" href="/assets/js/12.d92bc231.js"><link rel="prefetch" href="/assets/js/13.0cdc8878.js"><link rel="prefetch" href="/assets/js/14.4b8dda72.js"><link rel="prefetch" href="/assets/js/15.a8a0fafc.js"><link rel="prefetch" href="/assets/js/16.5bdcfbc9.js"><link rel="prefetch" href="/assets/js/17.b6e884a5.js"><link rel="prefetch" href="/assets/js/18.fdf642df.js"><link rel="prefetch" href="/assets/js/19.8ed20b29.js"><link rel="prefetch" href="/assets/js/20.d61f2e18.js"><link rel="prefetch" href="/assets/js/22.784cdbd1.js"><link rel="prefetch" href="/assets/js/23.e3f7e442.js"><link rel="prefetch" href="/assets/js/24.3e791285.js"><link rel="prefetch" href="/assets/js/25.19abad5d.js"><link rel="prefetch" href="/assets/js/26.1f77611f.js"><link rel="prefetch" href="/assets/js/27.63736e1b.js"><link rel="prefetch" href="/assets/js/28.20af48b9.js"><link rel="prefetch" href="/assets/js/29.69d3a345.js"><link rel="prefetch" href="/assets/js/3.43537c17.js"><link rel="prefetch" href="/assets/js/30.f1ee2294.js"><link rel="prefetch" href="/assets/js/31.381c97b4.js"><link rel="prefetch" href="/assets/js/32.d4b8380a.js"><link rel="prefetch" href="/assets/js/33.a78c4fbe.js"><link rel="prefetch" href="/assets/js/34.0f3cd449.js"><link rel="prefetch" href="/assets/js/35.33554918.js"><link rel="prefetch" href="/assets/js/36.299f01b2.js"><link rel="prefetch" href="/assets/js/37.12d234d0.js"><link rel="prefetch" href="/assets/js/38.d2164879.js"><link rel="prefetch" href="/assets/js/39.5e6eab37.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.b3e3110f.js"><link rel="prefetch" href="/assets/js/41.ecfb8304.js"><link rel="prefetch" href="/assets/js/42.16f361c8.js"><link rel="prefetch" href="/assets/js/43.faa29e08.js"><link rel="prefetch" href="/assets/js/44.0bc6367a.js"><link rel="prefetch" href="/assets/js/45.7e9cd941.js"><link rel="prefetch" href="/assets/js/46.a805fa43.js"><link rel="prefetch" href="/assets/js/47.c472f757.js"><link rel="prefetch" href="/assets/js/48.7338f78b.js"><link rel="prefetch" href="/assets/js/49.5a6f4446.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/50.bb80eb35.js"><link rel="prefetch" href="/assets/js/51.82d3fcea.js"><link rel="prefetch" href="/assets/js/52.168eb36e.js"><link rel="prefetch" href="/assets/js/53.380a1acc.js"><link rel="prefetch" href="/assets/js/54.617f6dc1.js"><link rel="prefetch" href="/assets/js/55.e1661fdd.js"><link rel="prefetch" href="/assets/js/56.13d9db28.js"><link rel="prefetch" href="/assets/js/57.7b48a8a1.js"><link rel="prefetch" href="/assets/js/58.5dbdf031.js"><link rel="prefetch" href="/assets/js/59.a9c576a9.js"><link rel="prefetch" href="/assets/js/6.9073f8bb.js"><link rel="prefetch" href="/assets/js/60.3b9fee2f.js"><link rel="prefetch" href="/assets/js/61.8fbb60eb.js"><link rel="prefetch" href="/assets/js/62.3015de6e.js"><link rel="prefetch" href="/assets/js/7.733f78a6.js"><link rel="prefetch" href="/assets/js/8.77d48f5d.js"><link rel="prefetch" href="/assets/js/9.84cabc87.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.faf25a8f.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>构建工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>测试框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>node</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/2586cb/" class="sidebar-link">node介绍</a></li><li><a href="/pages/5d2c54/" class="sidebar-link">模块机制</a></li><li><a href="/pages/1b14a3/" class="sidebar-link">异步I/O操作</a></li><li><a href="/pages/ec8dfa/" class="sidebar-link">异步编程</a></li><li><a href="/pages/4fe0f1/" class="sidebar-link">内存控制</a></li><li><a href="/pages/84c133/" class="sidebar-link">理解Buffer</a></li><li><a href="/pages/5d721b/" aria-current="page" class="active sidebar-link">网络编程</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/pages/a95428/" class="sidebar-link">进程</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>devops</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/technology/#前端工程化" data-v-0c557b5e>前端工程化</a></li><li data-v-0c557b5e><a href="/technology/#node" data-v-0c557b5e>node</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-05-04</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">网络编程<!----></h1> <!----> <div class="theme-vdoing-content content__default"><p>Node是一个面向网络而生的平台，它具有事件驱动、无阻塞、单线程等特性，具备良好的可伸缩性，使得它十分轻量，适合在分布式网络中扮演各种各样的角色。同时Node提供的API十分贴合网络，适合用它基础的API构建灵活的网络服务。</p> <p>Node提供了net、dgram、http、https这4个模块，分别用于处理TCP、UDP、HTTP、HTTPS，适用于服务器端和客户端。</p> <h3 id="_01-构建-tcp-服务"><a href="#_01-构建-tcp-服务" class="header-anchor">#</a> 01. 构建 TCP 服务</h3> <p>TCP全名为传输控制协议，在OSI模型（由七层组成，分别为物理层、数据链结层、网络层、传输层、会话层、表示层、应用层）中属于传输层协议。许多应用层协议基于TCP构建，典型的是HTTP、SMTP、IMAP等协议.</p> <h4 id="tcp"><a href="#tcp" class="header-anchor">#</a> TCP</h4> <p>OSI模型:
+<img src="/images/node/OSI%E6%A8%A1%E5%9E%8B.png" alt=""></p> <p>TCP是面向连接的协议，其显著的特征是在传输之前需要3次握手形成会话.</p> <p>TCP在传输之前的3次握手:
+<img src="/images/node/TCP%E5%9C%A8%E4%BC%A0%E8%BE%93%E4%B9%8B%E5%89%8D%E7%9A%843%E6%AC%A1%E6%8F%A1%E6%89%8B.png" alt=""></p> <p>只有会话形成之后，服务器端和客户端之间才能互相发送数据。在创建会话的过程中，服务器端和客户端分别提供一个套接字，这两个套接字共同形成一个连接。服务器端与客户端则通过套接字实现两者之间连接的操作。</p> <h4 id="创建tcp服务器端"><a href="#创建tcp服务器端" class="header-anchor">#</a> 创建TCP服务器端</h4> <p>通过net.createServer(listener)即可创建一个TCP服务器，listener是连接事件connection
+的侦听器</p> <div class="language- extra-class"><pre class="language-text"><code>var net = require('net');
+var server = net.createServer(function (socket) {
+ // 新的连接
+ socket.on('data', function (data) {
+ socket.write(&quot;你好&quot;);
+ });
+ socket.on('end', function () {
+ console.log('连接断开');
+ });
+ socket.write(&quot;欢迎光临《深入浅出Node.js》示例：\n&quot;);
+});
+server.listen(8124, function () {
+ console.log('server bound');
+}); 
+</code></pre></div><p>采用如下的方式进行侦听</p> <div class="language- extra-class"><pre class="language-text"><code>var server = net.createServer();
+server.on('connection', function (socket) {
+ // 新的连接
+});
+server.listen(8124); 
+</code></pre></div><h3 id="_02-构建-udp-服务"><a href="#_02-构建-udp-服务" class="header-anchor">#</a> 02. 构建 UDP 服务</h3> <p>UDP又称用户数据包协议，与TCP一样同属于网络传输层。UDP与TCP最大的不同是UDP不是面向连接的。TCP中连接一旦建立，所有的会话都基于连接完成，客户端如果要与另一个TCP服通信，需要另创建一个套接字来完成连接。但在UDP中，一个套接字可以与多个UDP服务通信，它虽然提供面向事务的简单不可靠信息传输服务，在网络差的情况下存在丢包严重的问题，但是由于它无须连接，资源消耗低，处理快速且灵活，所以常常应用在那种偶尔丢一两个数据包也不会产生重大影响的场景，比如音频、视频等。UDP目前应用很广泛，DNS服务即是基于它实现的。</p> <h4 id="创建udp套接字"><a href="#创建udp套接字" class="header-anchor">#</a> 创建UDP套接字</h4> <p>创建UDP套接字十分简单，UDP套接字一旦创建，既可以作为客户端发送数据，也可以作为服务器端接收数据。下面的代码创建了一个UDP套接字：</p> <div class="language- extra-class"><pre class="language-text"><code>var dgram = require('dgram');
+var socket = dgram.createSocket(&quot;udp4&quot;);
+</code></pre></div><h4 id="创建udp服务器端"><a href="#创建udp服务器端" class="header-anchor">#</a> 创建UDP服务器端</h4> <p>若想让UDP套接字接收网络消息，只要调用dgram.bind(port, [address])方法对网卡和端口进行绑定即可。以下为一个完整的服务器端示例：</p> <div class="language- extra-class"><pre class="language-text"><code>var dgram = require(&quot;dgram&quot;);
+var server = dgram.createSocket(&quot;udp4&quot;);
+server.on(&quot;message&quot;, function (msg, rinfo) {
+ console.log(&quot;server got: &quot; + msg + &quot; from &quot; +
+ rinfo.address + &quot;:&quot; + rinfo.port);
+});
+server.on(&quot;listening&quot;, function () {
+  var address = server.address(); 
+  console.log(&quot;server listening &quot; + address.address + &quot;:&quot; + address.port);
+});
+server.bind(41234); 
+// server listening 0.0.0.0:41234
+</code></pre></div><p>该套接字将接收所有网卡上41234端口上的消息。在绑定完成后，将触发listening事件。</p> <h4 id="创建udp客户端"><a href="#创建udp客户端" class="header-anchor">#</a> 创建UDP客户端</h4> <div class="language- extra-class"><pre class="language-text"><code>var dgram = require('dgram');
+var message = new Buffer(&quot;深入浅出Node.js&quot;);
+var client = dgram.createSocket(&quot;udp4&quot;);
+client.send(message, 0, message.length, 41234, &quot;localhost&quot;, function(err, bytes) {
+ client.close();
+});
+</code></pre></div><p>服务器端的message命令行输出：server got: 深入浅出Node.js from 127.0.0.1:51987</p> <p>当套接字对象用在客户端时，可以调用send()方法发送消息到网络中。send()方法的参数如下：</p> <div class="language- extra-class"><pre class="language-text"><code>socket.send(buf, offset, length, port, address, [callback]) 
+</code></pre></div><ul><li>Buffer</li> <li>Buffer的偏移</li> <li>Buffer的长度</li> <li>目标端口</li> <li>目标地址</li> <li>发送完成后的回调。</li></ul> <h4 id="udp套接字事件"><a href="#udp套接字事件" class="header-anchor">#</a> UDP套接字事件</h4> <p>UDP套接字相对TCP套接字使用起来更简单，它只是一个<code>EventEmitter</code>的实例，而非Stream的实例。它具备如下自定义事件:</p> <ul><li>message：当UDP套接字侦听网卡端口后，接收到消息时触发该事件，触发携带的数据为
+消息Buffer对象和一个远程地址信息。</li> <li>listening：当UDP套接字开始侦听时触发该事件。</li> <li>close：调用close()方法时触发该事件，并不再触发message事件。如需再次触发message
+事件，重新绑定即可。</li> <li>error：当异常发生时触发该事件，如果不侦听，异常将直接抛出，使进程退出。</li></ul> <h3 id="_03-构建-http-服务"><a href="#_03-构建-http-服务" class="header-anchor">#</a> 03. 构建 HTTP 服务</h3> <p>TCP与UDP都属于网络传输层协议，如果要构造高效的网络应用，就应该从传输层进行着手。</p> <p>简易HTTP服务器：</p> <div class="language- extra-class"><pre class="language-text"><code>var http = require('http');
+http.createServer(function (req, res) {
+ res.writeHead(200, {'Content-Type': 'text/plain'});
+ res.end('Hello World\n');
+}).listen(1337, '127.0.0.1');
+console.log('Server running at http://127.0.0.1:1337/'); 
+</code></pre></div><h4 id="http"><a href="#http" class="header-anchor">#</a> HTTP</h4> <ol><li>HTTP报文</li></ol> <div class="language- extra-class"><pre class="language-text"><code>wsh@wsh ~ % curl -v http://127.0.0.1:1337
+// TCP的3次握手过程
+*   Trying 127.0.0.1...
+* TCP_NODELAY set
+* Connected to 127.0.0.1 (127.0.0.1) port 1337 (#0)
+
+// 在完成握手之后，客户端向服务器端发送请求报文
+&gt; GET / HTTP/1.1
+&gt; Host: 127.0.0.1:1337
+&gt; User-Agent: curl/7.64.1
+&gt; Accept: */*
+
+// 是服务器端完成处理后，向客户端发送响应内容，包括响应头和响应体
+&gt;
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: text/plain
+&lt; Date: Wed, 04 May 2022 06:56:44 GMT
+&lt; Connection: keep-alive
+&lt; Keep-Alive: timeout=5
+&lt; Transfer-Encoding: chunked
+&lt;
+Hello World
+
+// 结束会话的信息
+* Connection #0 to host 127.0.0.1 left intact
+* Closing connection 0
+</code></pre></div><p>http是基于请求响应式的，以一问一答的方式实现服务，虽然基于TCP会话，但是本身却并无会话的特点。</p> <p>HTTP服务只做两件事情：处理HTTP请求和发送HTTP响应。</p> <p>无论是HTTP请求报文还是HTTP响应报文，报文内容都包含两个部分：报文头和报文体。上文的报文代码中&gt;和&lt;部分属于报文的头部，由于是GET请求，请求报文中没有包含报文体，响应报文中的Hello World即是报文体。</p> <h4 id="http模块"><a href="#http模块" class="header-anchor">#</a> http模块</h4> <p>http模块即是将connection到request的过程进行了封装:</p> <p><img src="/images/node/http%E6%A8%A1%E5%9D%97%E5%B0%86connection%E5%88%B0request%E7%9A%84%E8%BF%87%E7%A8%8B%E8%BF%9B%E8%A1%8C%E4%BA%86%E5%B0%81%E8%A3%85.png" alt=""></p> <p>http模块将连接所用套接字的读写抽象为<code>ServerRequest</code>和<code>ServerResponse</code>对象，它们分别对应请求和响应操作。在请求产生的过程中，http模块拿到连接中传来的数据，调用二进制模块http_parser进行解析，在解析完请求报文的报头后，触发request事件，调用用户的业务逻辑。
+<img src="/images/node/http%E6%A8%A1%E5%9D%97%E4%BA%A7%E7%94%9F%E8%AF%B7%E6%B1%82%E7%9A%84%E6%B5%81%E7%A8%8B.png" alt=""></p> <ol><li>HTTP请求</li></ol> <p>对于TCP连接的读操作，http模块将其封装为ServerRequest对象。让我们再次查看前面的请
+求报文，报文头部将会通过http_parser进行解析。请求报文的代码如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; GET / HTTP/1.1
+&gt; User-Agent: curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5
+&gt; Host: 127.0.0.1:1337
+&gt; Accept: */*
+&gt;
+</code></pre></div><p>报文头第一行GET / HTTP/1.1被解析之后分解为如下属性。</p> <ul><li>req.method属性：值为GET，是为请求方法，常见的请求方法有GET、POST、DELETE、PUT、
+CONNECT等几种。</li> <li>req.url属性：值为/。</li> <li>req.httpVersion属性：值为1.1。
+其余报头是很规律的Key: Value格式，被解析后放置在req.headers属性上传递给业务逻辑以
+供调用，如下所示：</li></ul> <div class="language- extra-class"><pre class="language-text"><code> headers:
+ { 'user-agent': 'curl/7.24.0 (x86_64-apple-darwin12.0) libcurl/7.24.0 OpenSSL/0.9.8r zlib/1.2.5',
+ host: '127.0.0.1:1337',
+ accept: '*/*' },
+</code></pre></div><p>报文体部分则抽象为一个只读流对象，如果业务逻辑需要读取报文体中的数据，则要在这个数据流结束后才能进行操作，如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>function (req, res) {
+ // console.log(req.headers);
+ var buffers = [];
+ req.on('data', function (trunk) {
+ buffers.push(trunk);
+ }).on('end', function () {
+ var buffer = Buffer.concat(buffers);
+ // TODO
+ res.end('Hello world');
+ });
+}
+</code></pre></div><p>HTTP请求对象和HTTP响应对象是相对较底层的封装，现行的Web框架如Connect和Express都是在这两个对象的基础上进行高层封装完成的。</p> <ol start="2"><li>HTTP响应</li></ol> <p>HTTP响应对象可以看成一个可写的流对象。它影响响应报文头部信息的 API 为 res.setHeader() 和 res.writeHead()。在上述示例中：</p> <div class="language- extra-class"><pre class="language-text"><code>res.writeHead(200, {'Content-Type': 'text/plain'});
+</code></pre></div><p>其分为setHeader()和writeHead()两个步骤。它在http模块的封装下，实际生成如下报文：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt; HTTP/1.1 200 OK
+&lt; Content-Type: text/plain
+</code></pre></div><p>我们可以调用setHeader进行多次设置，但只有调用writeHead后，报头才会写入到连接中.</p> <h4 id="http客户端"><a href="#http客户端" class="header-anchor">#</a> HTTP客户端</h4> <p>http模块提供了一个底层API：http.request(options, connect)，用于构造HTTP客户端。</p> <ol><li>HTTP响应
+ClientRequest在解析响应报文时，一解析完响应头就触发response事件，同时传递一个响应对象以供操作ClientResponse。后续响应报文体以只读流的方式提供.</li> <li>HTTP 代理
+如同服务器端的实现一般，http提供的ClientRequest对象也是基于TCP层实现的，在keepalive的情况下，一个底层会话连接可以多次用于请求。为了重用TCP连接，http模块包含一
+个默认的客户端代理对象http.globalAgent。它对每个服务器端（host + port）创建的连接进行了
+管理，默认情况下，通过ClientRequest对象对同一个服务器端发起的HTTP请求最多可以创建<code>5个连接</code>。它的实质是一个连接池.</li></ol> <p>HTTP代理对服务器端创建的连接进行管理:
+<img src="/images/node/HTTP%E4%BB%A3%E7%90%86%E5%AF%B9%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%88%9B%E5%BB%BA%E7%9A%84%E8%BF%9E%E6%8E%A5%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86.png" alt=""></p> <p>调用HTTP客户端同时对一个服务器发起10次HTTP请求时，其实质只有5个请求处于并发状态，后续的请求需要等待某个请求完成服务后才真正发出。这与浏览器对同一个域名有下载连接数的限制是相同的行为。</p> <h3 id="_04-构建-websocket-服务"><a href="#_04-构建-websocket-服务" class="header-anchor">#</a> 04. 构建 WebSocket 服务</h3> <ul><li>WebSocket客户端基于事件的编程模型与Node中自定义事件相差无几。</li> <li>WebSocket实现了客户端与服务器端之间的长连接，而Node事件驱动的方式十分擅长与大
+量的客户端保持高并发连接。</li></ul> <h4 id="websocket握手"><a href="#websocket握手" class="header-anchor">#</a> WebSocket握手</h4> <p>客户端建立连接时，通过HTTP发起请求报文,与普通的HTTP请求协议略有区别的部分在于如下这些协议头：</p> <div class="language- extra-class"><pre class="language-text"><code>Upgrade: websocket
+Connection: Upgrade 
+</code></pre></div><p>上述两个字段表示请求服务器端升级协议为WebSocket。其中<code>Sec-WebSocket-Key</code>用于安全校验：</p> <div class="language- extra-class"><pre class="language-text"><code>Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+</code></pre></div><p>Sec-WebSocket-Key的值是随机生成的Base64编码的字符串。服务器端接收到之后将其与字符串258EAFA5-E914-47DA-95CA-C5AB0DC85B11相连，形成字符串dGhlIHNhbXBsZSBub25jZQ==258EAFA5-
+E914-47DA-95CA-C5AB0DC85B11，然后通过sha1安全散列算法计算出结果后，再进行Base64编码，
+最后返回给客户端。这个算法如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>var crypto = require('crypto');
+var val = crypto.createHash('sha1').update(key).digest('base64');
+</code></pre></div><p>另外，下面两个字段指定子协议和版本号：</p> <div class="language- extra-class"><pre class="language-text"><code>Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+</code></pre></div><p>服务器端在处理完请求后，响应如下报文：</p> <div class="language- extra-class"><pre class="language-text"><code>HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+Sec-WebSocket-Protocol: chat 
+</code></pre></div><p>上面的报文告之客户端正在更换协议，更新应用层协议为WebSocket协议，并在当前的套接字连接上应用新协议。剩余的字段分别表示服务器端基于Sec-WebSocket-Key生成的字符串和选中的子协议。客户端将会校验Sec-WebSocket-Accept的值，如果成功，将开始接下来的数据传输。</p> <h4 id="websocket数据传输"><a href="#websocket数据传输" class="header-anchor">#</a> WebSocket数据传输</h4> <p>在握手顺利完成后，当前连接将不再进行HTTP的交互，而是开始WebSocket的数据帧协议，
+实现客户端与服务器端的数据交换.</p> <p><img src="/images/node/%E5%8D%8F%E8%AE%AE%E5%8D%87%E7%BA%A7%E8%BF%87%E7%A8%8B%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <h3 id="_05-网络服务与安全"><a href="#_05-网络服务与安全" class="header-anchor">#</a> 05. 网络服务与安全</h3> <p>Node在网络安全上提供了3个模块，分别为crypto、tls、https。
+其中crypto主要用于加密解密，SHA1、MD5等加密算法都在其中有体现。</p> <h4 id="tls-ssl"><a href="#tls-ssl" class="header-anchor">#</a> TLS/SSL</h4> <ol><li>密钥
+<code>TLS/SSL</code>是一个公钥/私钥的结构，它是一个非对称的结构，每个服务器端和客户端都有自己
+的公私钥。公钥用来加密要传输的数据，私钥用来解密接收到的数据。公钥和私钥是配对的，通
+过公钥加密的数据，只有通过私钥才能解密，所以在建立安全传输之前，客户端和服务器端之间
+需要互换公钥。客户端发送数据时要通过服务器端的公钥进行加密，服务器端发送数据时则需要
+客户端的公钥进行加密，如此才能完成加密解密的过程。</li></ol> <p>客户端和服务器端交换密钥：
+<img src="/images/node/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E4%BA%A4%E6%8D%A2%E5%AF%86%E9%92%A5.png" alt=""></p> <p>中间人攻击示意图:
+<img src="/images/node/%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt=""></p> <p>为了解决中间人攻击问题，TLS/SSL引入了数字证书来进行认证。与直接用公钥不同，数字证书中包含了服务器的名称和主机名、服务器的公钥、签名颁发机构的名称、来自签名颁发机构的签名。在连接建立前，会通过证书中的签名确认收到的公钥是来自目标服务器的，从而产生信任关系。</p></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/84c133/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">理解Buffer</div></a> <a href="/pages/a95428/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">进程</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/84c133/" class="prev">理解Buffer</a></span> <span class="next"><a href="/pages/a95428/">进程</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/a95428/"><div>
+            进程
+            <!----></div></a> <span class="date">05-04</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/84c133/"><div>
+            理解Buffer
+            <!----></div></a> <span class="date">05-04</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/4fe0f1/"><div>
+            内存控制
+            <!----></div></a> <span class="date">05-03</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2e996b91.js" defer></script><script src="/assets/js/2.dc8a2400.js" defer></script><script src="/assets/js/21.357d4d0b.js" defer></script>
+  </body>
+</html>
