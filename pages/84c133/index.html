@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>理解Buffer | Wsh&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/images/logo.png">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    
+    <link rel="preload" href="/assets/css/0.styles.ed7a8e15.css" as="style"><link rel="preload" href="/assets/js/app.713afd20.js" as="script"><link rel="preload" href="/assets/js/2.dc8a2400.js" as="script"><link rel="preload" href="/assets/js/20.d61f2e18.js" as="script"><link rel="prefetch" href="/assets/js/10.57255fdd.js"><link rel="prefetch" href="/assets/js/11.9356ed36.js"><link rel="prefetch" href="/assets/js/12.d92bc231.js"><link rel="prefetch" href="/assets/js/13.0cdc8878.js"><link rel="prefetch" href="/assets/js/14.4b8dda72.js"><link rel="prefetch" href="/assets/js/15.a8a0fafc.js"><link rel="prefetch" href="/assets/js/16.5bdcfbc9.js"><link rel="prefetch" href="/assets/js/17.b6e884a5.js"><link rel="prefetch" href="/assets/js/18.fdf642df.js"><link rel="prefetch" href="/assets/js/19.8ed20b29.js"><link rel="prefetch" href="/assets/js/21.fbd5d762.js"><link rel="prefetch" href="/assets/js/22.318794f4.js"><link rel="prefetch" href="/assets/js/23.8e352e3c.js"><link rel="prefetch" href="/assets/js/24.7a88788e.js"><link rel="prefetch" href="/assets/js/25.20ddd9f3.js"><link rel="prefetch" href="/assets/js/26.2785b5f9.js"><link rel="prefetch" href="/assets/js/27.7c9c7723.js"><link rel="prefetch" href="/assets/js/28.ad4da0e7.js"><link rel="prefetch" href="/assets/js/29.4fa0c51c.js"><link rel="prefetch" href="/assets/js/3.79522906.js"><link rel="prefetch" href="/assets/js/30.98260d80.js"><link rel="prefetch" href="/assets/js/31.31baa083.js"><link rel="prefetch" href="/assets/js/32.27c82165.js"><link rel="prefetch" href="/assets/js/33.1def58d3.js"><link rel="prefetch" href="/assets/js/34.577ef1be.js"><link rel="prefetch" href="/assets/js/35.9ff50218.js"><link rel="prefetch" href="/assets/js/36.84c37381.js"><link rel="prefetch" href="/assets/js/37.40f49544.js"><link rel="prefetch" href="/assets/js/38.e2c9bbab.js"><link rel="prefetch" href="/assets/js/39.e49b486e.js"><link rel="prefetch" href="/assets/js/4.c704e751.js"><link rel="prefetch" href="/assets/js/40.4987c6bb.js"><link rel="prefetch" href="/assets/js/41.10645ae3.js"><link rel="prefetch" href="/assets/js/42.0e4ae191.js"><link rel="prefetch" href="/assets/js/43.40c026a8.js"><link rel="prefetch" href="/assets/js/44.7442af57.js"><link rel="prefetch" href="/assets/js/45.3dc624fe.js"><link rel="prefetch" href="/assets/js/46.dd3f8318.js"><link rel="prefetch" href="/assets/js/47.b110a3b5.js"><link rel="prefetch" href="/assets/js/48.52059f6f.js"><link rel="prefetch" href="/assets/js/49.b2893ceb.js"><link rel="prefetch" href="/assets/js/5.2db75e05.js"><link rel="prefetch" href="/assets/js/50.50e777cb.js"><link rel="prefetch" href="/assets/js/51.bb7ac045.js"><link rel="prefetch" href="/assets/js/52.0c8b844e.js"><link rel="prefetch" href="/assets/js/53.f59019ff.js"><link rel="prefetch" href="/assets/js/54.ede510e7.js"><link rel="prefetch" href="/assets/js/55.215c9db3.js"><link rel="prefetch" href="/assets/js/56.93192de8.js"><link rel="prefetch" href="/assets/js/57.cd94bb41.js"><link rel="prefetch" href="/assets/js/58.13a29974.js"><link rel="prefetch" href="/assets/js/59.ba7c820f.js"><link rel="prefetch" href="/assets/js/6.9073f8bb.js"><link rel="prefetch" href="/assets/js/60.67e4bbed.js"><link rel="prefetch" href="/assets/js/7.733f78a6.js"><link rel="prefetch" href="/assets/js/8.77d48f5d.js"><link rel="prefetch" href="/assets/js/9.84cabc87.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ed7a8e15.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/1.gif" alt="Wsh's blog" class="logo"> <span class="site-name can-hide">Wsh's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/images/avatar.gif"> <div class="blogger-info"><h3>wsh</h3> <span>热爱前端的程序媛</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端知识库" class="dropdown-title"><a href="/web/" class="link-title">前端知识库</a> <span class="title" style="display:none;">前端知识库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/cache/" class="nav-link">《前端缓存》</a></li><li class="dropdown-item"><!----> <a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-item"><!----> <a href="/note/typescript/" class="nav-link">《typescript》</a></li><li class="dropdown-item"><!----> <a href="/note/javascript/" class="nav-link">《javascript》</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><!----> <span class="title" style="display:;">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/webpack/" class="nav-link">构建工具</a></li><li class="dropdown-item"><!----> <a href="/pages/71f9ea/" class="nav-link">测试框架</a></li><li class="dropdown-item"><!----> <a href="/pages/2586cb/" class="nav-link">node</a></li><li class="dropdown-item"><!----> <a href="/pages/3f10df/" class="nav-link">devops</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="通用" class="dropdown-title"><!----> <span class="title" style="display:;">通用</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/note/algorithm/" class="nav-link">数据结构与算法</a></li><li class="dropdown-item"><!----> <a href="/note/http/" class="nav-link">网络协议</a></li></ul></div></div><div class="nav-item"><a href="/pages/ca0c25/" class="nav-link">宝库</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div> <a href="https://github.com/wshuhua" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>构建工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>测试框架</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>node</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/2586cb/" class="sidebar-link">node介绍</a></li><li><a href="/pages/5d2c54/" class="sidebar-link">模块机制</a></li><li><a href="/pages/1b14a3/" class="sidebar-link">异步I/O操作</a></li><li><a href="/pages/ec8dfa/" class="sidebar-link">异步编程</a></li><li><a href="/pages/4fe0f1/" class="sidebar-link">内存控制</a></li><li><a href="/pages/84c133/" aria-current="page" class="active sidebar-link">理解Buffer</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>devops</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper bg-style-6"><div class="articleInfo-wrap" data-v-0c557b5e><div class="articleInfo" data-v-0c557b5e><ul class="breadcrumbs" data-v-0c557b5e><li data-v-0c557b5e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-0c557b5e></a></li> <li data-v-0c557b5e><a href="/technology/#前端工程化" data-v-0c557b5e>前端工程化</a></li><li data-v-0c557b5e><a href="/technology/#node" data-v-0c557b5e>node</a></li></ul> <div class="info" data-v-0c557b5e><div title="作者" class="author iconfont icon-touxiang" data-v-0c557b5e><a href="https://github.com/wshuhua" target="_blank" title="作者" class="beLink" data-v-0c557b5e>wsh</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-0c557b5e><a href="javascript:;" data-v-0c557b5e>2022-05-04</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">理解Buffer<!----></h1> <!----> <div class="theme-vdoing-content content__default"><p>JavaScript对于字符串（string）的操作十分友好，无论是宽字节字符串还是单字节字符串，
+都被认为是一个字符串。示例代码如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>console.log(&quot;0123456789&quot;.length); // 10
+console.log(&quot;零一二三四五六七八九&quot;.length); //10
+console.log(&quot;\u00bd&quot;.length); // 1 
+</code></pre></div><p><img src="/images/node/buffer%E5%AF%B9%E8%B1%A1.png" alt=""></p> <h3 id="_01-buffer-结构"><a href="#_01-buffer-结构" class="header-anchor">#</a> 01. Buffer 结构</h3> <p>Buffer是一个像Array的对象，但它主要用于操作字节。</p> <h4 id="模块结构"><a href="#模块结构" class="header-anchor">#</a> 模块结构</h4> <p>Buffer是一个典型的JavaScript与C++结合的模块，它将性能相关部分用C++实现，将非性能相关的部分用JavaScript实现.</p> <p>Buffer的分工 如图所示。</p> <p><img src="/images/node/Buffer%E7%9A%84%E5%88%86%E5%B7%A5.png" alt=""></p> <p><code>Buffer所占用的内存不是通过V8分配的，属于堆外内存</code>。由于V8垃圾回收性能的影响，将常用的操作对象用更高效和专有的内存分配回收策略来管理是个不错的思路。由于Buffer太过常见，Node在进程启动时就已经加载了它，并将其放在全局对象（global）
+上。所以在使用Buffer时，无须通过require()即可直接使用。</p> <h4 id="buffer对象"><a href="#buffer对象" class="header-anchor">#</a> <a href="https://www.runoob.com/nodejs/nodejs-buffer.html" target="_blank" rel="noopener noreferrer">Buffer对象<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></h4> <div class="custom-block tip"><p class="custom-block-title">提示</p> <p>在v6.0之前创建Buffer对象直接使用new Buffer()构造函数来创建对象实例，但是Buffer对内存的权限操作相比很大，可以直接捕获一些敏感信息，所以在v6.0以后，官方文档里面建议使用 Buffer.from() 接口去创建Buffer对象。</p></div> <p>Buffer对象类似于数组，它的元素为16进制的两位数，即0到255的数值。</p> <div class="language- extra-class"><pre class="language-text"><code>var str = &quot;深入浅出node.js&quot;;
+var buf = Buffer.from(str, 'utf8');
+console.log(buf);
+// =&gt; &lt;Buffer e6 b7 b1 e5 85 a5 e6 b5 85 e5 87 ba 6e 6f 64 65 2e 6a 73&gt;
+</code></pre></div><p>由上面的示例可见，不同编码的字符串占用的元素个数各不相同，上面代码中的中文字在UTF8编码下占用3个元素，字母和半角标点符号占用1个元素。</p> <h4 id="buffer内存分配"><a href="#buffer内存分配" class="header-anchor">#</a> Buffer内存分配</h4> <p>Buffer对象的内存分配不是在V8的堆内存中，而是在Node的C++层面实现内存的申请的。因为处理大量的字节数据不能采用需要一点内存就向操作系统申请一点内存的方式，这可能造成大量的内存申请的系统调用，对操作系统有一定压力。为此Node在内存的使用上应用的是在C++层面申请内存、在JavaScript中分配内存的策略。</p> <p>为了高效地使用申请来的内存，Node采用了slab分配机制。slab是一种动态内存管理机制。</p> <p>slab就是一块申请好的固定大小的内存区域。slab具有如下3种状态。</p> <div class="language- extra-class"><pre class="language-text"><code>full：完全分配状态。
+partial：部分分配状态。
+empty：没有被分配状态。
+</code></pre></div><p>当我们需要一个Buffer对象，可以通过以下方式分配指定大小的Buffer对象：</p> <div class="language- extra-class"><pre class="language-text"><code>Buffer.alloc(size)
+</code></pre></div><p>Node以8 KB为界限来区分Buffer是大对象还是小对象：</p> <p>Buffer结构：</p> <div class="language- extra-class"><pre class="language-text"><code>[Function: Buffer] {
+  poolSize: 8192,
+  from: [Function: from],
+  of: [Function: of],
+  alloc: [Function: alloc],
+  allocUnsafe: [Function: allocUnsafe],
+  allocUnsafeSlow: [Function: allocUnsafeSlow],
+  isBuffer: [Function: isBuffer],
+  compare: [Function: compare],
+  isEncoding: [Function: isEncoding],
+  concat: [Function: concat],
+  byteLength: [Function: byteLength],
+  [Symbol(kIsEncodingSymbol)]: [Function: isEncoding]
+}
+</code></pre></div><p>Buffer.poolSize = 8 * 1024;
+这个8 KB的值也就是每个slab的大小值，在JavaScript层面，以它作为单位单元进行内存的分配。
+加载时调用 createPool() 相当于初始化了一个 8kb 的内存空间，这样第一次内存分配也会变得高效，初始化的同时还用偏移量 poolOffset 来记录使用了多少字节</p> <div class="language- extra-class"><pre class="language-text"><code>buffer.poolSize = 8 * 1024;
+let poolSize, poolOffset, allocPool;
+
+... // 中间代码省略
+
+function createPool() {
+  poolSize = Buffer.poolSize;
+  allocPool = createUnsafeArrayBuffer(poolSize);
+  setHiddenValue(allocPool, arraybuffer_untransferable_private_symbol, true);
+  poolOffset = 0;
+}
+createPool();
+</code></pre></div><ol><li><code>分配小Buffer对象</code></li></ol> <p>如果指定Buffer的<code>大小少于8 KB</code>，Node会按照小对象的方式进行分配。Buffer的分配过程中主要使用一个局部变量pool作为中间处理对象，处于分配状态的slab单元都指向它。以下是分配一个全新的slab单元的操作，它会将新申请的SlowBuffer对象指向它：</p> <div class="language- extra-class"><pre class="language-text"><code>var pool;
+function allocPool() {
+ pool = new SlowBuffer(Buffer.poolSize);
+ pool.used = 0;
+} 
+</code></pre></div><p>新构造的slab单元示例：slab处于empty状态:
+<img src="/images/node/%E6%96%B0%E6%9E%84%E9%80%A0%E7%9A%84slab%E5%8D%95%E5%85%83%E7%A4%BA%E4%BE%8B.png" alt=""></p> <p>这次构造将会去检查pool对象，如果pool没有被创建，将会创建一个新的slab单元指向它：</p> <div class="language- extra-class"><pre class="language-text"><code>if (!pool || pool.length - pool.used &lt; this.length) allocPool();
+</code></pre></div><p>同时当前Buffer对象的parent属性指向该slab，并记录下是从这个slab的哪个位置（offset）开始使用的，slab对象自身也记录被使用了多少字节，代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>this.parent = pool;
+this.offset = pool.used;
+pool.used += this.length;
+if (pool.used &amp; 7) pool.used = (pool.used + 8) &amp; ~7; 
+</code></pre></div><p>构造小Buffer对象时的代码如下：
+Buffer.alloc(1024)
+从一个新的slab单元中初次分配一个Buffer对象: slab状态为partial</p> <p><img src="/images/node/%E4%BB%8E%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84slab%E5%8D%95%E5%85%83%E4%B8%AD%E5%88%9D%E6%AC%A1%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%AABuffer%E5%AF%B9%E8%B1%A1.png" alt=""></p> <p>当再次创建一个Buffer对象时，构造过程中将会判断这个slab的剩余空间是否足够。如果足
+够，使用剩余空间，并更新slab的分配状态。下面的代码创建了一个新的Buffer对象，它会引起
+一次slab分配：</p> <p>构造小Buffer对象时的代码如下：
+Buffer.alloc(4000)</p> <p>从slab单元中再次分配一个Buffer对象:
+<img src="/images/node/%E4%BB%8Eslab%E5%8D%95%E5%85%83%E4%B8%AD%E5%86%8D%E6%AC%A1%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%AABuffer%E5%AF%B9.png" alt=""></p> <p>在一个小对象分配之前会判断这个 pool 空间是否还够，如果不够的话就会重新申请一块新的8KB内存来分配。</p> <p>所以一块 slab 可以被多个对象占有，加入第一次分配了1KB，但是下一个内存则要8KB，那么就造成了内存的浪费。这个1KB的小对象就占据了一整块内存。而且内存的释放规则是所有的对象释放之后，这块8KB的slab才会回收.</p> <ol start="2"><li><code>大对象内存分配</code></li></ol> <p>如果这个对象是超过了 slab 的大小，那么就不会占用slab块，直接使用C++层面分配你所需要的大小，这块空间就会被你一直占有。</p> <div class="language- extra-class"><pre class="language-text"><code>// Big buffer, just alloc one
+this.parent = new SlowBuffer(this.length);
+this.offset = 0; 
+</code></pre></div><h3 id="_02-buffer转换"><a href="#_02-buffer转换" class="header-anchor">#</a> 02. Buffer转换</h3> <div class="custom-block tip"><p class="custom-block-title">Node.js 目前支持的字符编码包括：</p> <ul><li>ascii - 仅支持 7 位 ASCII 数据。如果设置去掉高位的话，这种编码是非常快的。</li> <li>utf8 - 多字节编码的 Unicode 字符。许多网页和其他文档格式都使用 UTF-8 。</li> <li>utf16le - 2 或 4 个字节，小字节序编码的 Unicode 字符。支持代理对（U+10000 至 U+10FFFF）。</li> <li>ucs2 - utf16le 的别名。</li> <li>base64 - Base64 编码。</li> <li>latin1 - 一种把 Buffer 编码成一字节编码的字符串的方式。</li> <li>binary - latin1 的别名。</li> <li>hex - 将每个字节编码为两个十六进制字符</li></ul></div> <ul><li>创建 Buffer 类</li></ul> <p>Buffer 提供了以下 API 来创建 Buffer 类：</p> <div class="language- extra-class"><pre class="language-text"><code>Buffer.alloc(size[, fill[, encoding]])： 返回一个指定大小的 Buffer 实例，如果没有设置 fill，则默认填满 0
+Buffer.allocUnsafe(size)： 返回一个指定大小的 Buffer 实例，但是它不会被初始化，所以它可能包含敏感的数据
+Buffer.allocUnsafeSlow(size)
+Buffer.from(array)： 返回一个被 array 的值初始化的新的 Buffer 实例（传入的 array 的元素只能是数字，不然就会自动被 0 覆盖）
+Buffer.from(arrayBuffer[, byteOffset[, length]])： 返回一个新建的与给定的 ArrayBuffer 共享同一内存的 Buffer。
+Buffer.from(buffer)： 复制传入的 Buffer 实例的数据，并返回一个新的 Buffer 实例
+Buffer.from(string[, encoding])： 返回一个被 string 的值初始化的新的 Buffer 实例
+</code></pre></div><ul><li>写入缓冲区
+写入 Node 缓冲区的语法如下所示：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>buf.write(string[, offset[, length]][, encoding])
+</code></pre></div><p>参数描述如下：</p> <div class="language- extra-class"><pre class="language-text"><code>string - 写入缓冲区的字符串。
+offset - 缓冲区开始写入的索引值，默认为 0 。
+length - 写入的字节数，默认为 buffer.length
+encoding - 使用的编码。默认为 'utf8' 。
+</code></pre></div><p>返回值: 返回实际写入的大小。如果 buffer 空间不足， 则只会写入部分字符串。</p> <p>实例</p> <div class="language- extra-class"><pre class="language-text"><code>buf = Buffer.alloc(256);
+len = buf.write(&quot;www.runoob.com&quot;);
+
+console.log(&quot;写入字节数 : &quot;+  len);
+</code></pre></div><ul><li>从缓冲区读取数据
+读取 Node 缓冲区数据的语法如下所示：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>buf.toString([encoding[, start[, end]]])
+</code></pre></div><p>参数描述如下：</p> <div class="language- extra-class"><pre class="language-text"><code>encoding - 使用的编码。默认为 'utf8' 。
+start - 指定开始读取的索引位置，默认为 0。
+end - 结束位置，默认为缓冲区的末尾。
+</code></pre></div><p>返回值: 解码缓冲区数据并使用指定的编码返回字符串。</p> <div class="language- extra-class"><pre class="language-text"><code>buf = Buffer.alloc(26);
+for (var i = 0 ; i &lt; 26 ; i++) {
+  buf[i] = i + 97;
+}
+
+console.log( buf.toString('ascii'));       // 输出: abcdefghijklmnopqrstuvwxyz
+console.log( buf.toString('ascii',0,5));   //使用 'ascii' 编码, 并输出: abcde
+console.log( buf.toString('utf8',0,5));    // 使用 'utf8' 编码, 并输出: abcde
+console.log( buf.toString(undefined,0,5)); // 使用默认的 'utf8' 编码, 并输出: abcde
+// 输出结果为：
+abcdefghijklmnopqrstuvwxyz
+abcde
+abcde
+abcde
+</code></pre></div><ul><li>Buffer 转换为 JSON 对象</li></ul> <p>将 Node Buffer 转换为 JSON 对象的函数语法格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>buf.toJSON()
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>const buf = Buffer.from([0x1, 0x2, 0x3, 0x4, 0x5]);
+const json = JSON.stringify(buf);
+
+// 输出: {&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[1,2,3,4,5]}
+console.log(json);
+
+const copy = JSON.parse(json, (key, value) =&gt; {
+  return value &amp;&amp; value.type === 'Buffer' ?
+    Buffer.from(value.data) :
+    value;
+});
+
+// 输出: &lt;Buffer 01 02 03 04 05&gt;
+console.log(copy);
+// 输出结果为：
+{&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[1,2,3,4,5]}
+&lt;Buffer 01 02 03 04 05&gt;
+</code></pre></div><h3 id="buffer-的拼接"><a href="#buffer-的拼接" class="header-anchor">#</a> Buffer 的拼接</h3> <p>Buffer在使用场景中，通常是以一段一段的方式传输。以下是常见的从输入流中读取内容的
+示例代码：</p> <div class="language- extra-class"><pre class="language-text"><code>var fs = require('fs');
+var rs = fs.createReadStream('test.md');
+var data = '';
+// data事件中获取的chunk对象即是Buffer对象。
+rs.on(&quot;data&quot;, function (chunk){
+ data += chunk; // =》 data = data.toString() + chunk.toString(); 
+});
+rs.on(&quot;end&quot;, function () {
+ console.log(data);
+});
+</code></pre></div><p>外国人的语境通常是指英文环境，在他们的场景下，这个toString()不会造成任何问题。但对于宽字节的中文，却会形成问题。为了重现这个问题，下面我们模拟近似的场景，将文件可读流的每次读取的Buffer长度限制为11，代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>var rs = fs.createReadStream('test.md', {highWaterMark: 11});
+</code></pre></div><p>输出：</p> <div class="language- extra-class"><pre class="language-text"><code>窗前明��光
+疑是地上霜
+���头望明月
+低头���故乡
+</code></pre></div><h4 id="乱码是如何产生的"><a href="#乱码是如何产生的" class="header-anchor">#</a> 乱码是如何产生的</h4> <p>上面的诗歌中，“月”、“是”、“望”、“低”4个字没有被正常输出，取而代之的是3个 。产生这个输出结果的原因在于文件可读流在读取时会逐个读取Buffer。这首诗的原始Buffer应存储为：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;Buffer e7 aa 97 e5 89 8d e6 98 8e e6 9c 88 e5 85 89 0a e7 96 91 e6 98 af e5 9c b0 e4 b8 8a e9 9c 9c 0a e4 b8 be e5 a4 b4 e6 9c 9b e6 98 8e e6 9c 88 0a e4 bd ... 13 more bytes&gt;
+</code></pre></div><p>们限定了Buffer对象的长度为11:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;Buffer e7 aa 97 e5 89 8d e6 98 8e e6 9c&gt;
+&lt;Buffer 88 e5 85 89 2c e7 96 91 e6 98 af&gt;
+&lt;Buffer e5 9c b0 e4 b8 8a e9 9c 9c 2c e4&gt;
+&lt;Buffer b8 be e5 a4 b4 e6 9c 9b e6 98 8e&gt;
+&lt;Buffer e6 9c 88 2c e4 bd 8e e5 a4 b4 e6&gt;
+&lt;Buffer 80 9d e6 95 85 e4 b9 a1&gt;
+</code></pre></div><p>buf.toString()方法默认以UTF-8为编码，中文字在UTF-8下占3个字节。所以第一个Buffer对象在输出时，只能显示3个字符，Buffer中剩下的2个字节（e6 9c）将会以乱码的形式显示。第二个Buffer对象的第一个字节也不能形成文字，只能显示乱码。于是形成一些文字无法正常显示的问题。</p> <h4 id="setencoding-与string-decoder"><a href="#setencoding-与string-decoder" class="header-anchor">#</a> setEncoding()与string_decoder()</h4> <p>setEncoding()： 可读流设置编码</p> <div class="language- extra-class"><pre class="language-text"><code>var rs = fs.createReadStream('test.md', { highWaterMark: 11});
+rs.setEncoding('utf8'); 
+// 输出：
+床前明月光，疑是地上霜；举头望明月，低头思故乡
+</code></pre></div><p>无论如何设置编码，触发data事件的次数依旧相同，这意味着设置编码并未改变按段读取的基本方式。</p> <p>调用setEncoding()时，可读流对象在内部设置了一个decoder对象。每次data事件都通过该decoder对象进行Buffer到字符串的解码，然后传递给调用者。是故设置编码后，data不再收到原始的Buffer对象。但是这依旧无法解释为何设置编码后乱码问题被解决掉了。</p> <p>decoder对象来自于string_decoder模块StringDecoder的实例对象。</p> <div class="language- extra-class"><pre class="language-text"><code>var StringDecoder = require('string_decoder').StringDecoder;
+var decoder = new StringDecoder('utf8');
+var buf1 = new Buffer([0xE5, 0xBA, 0x8A, 0xE5, 0x89, 0x8D, 0xE6, 0x98, 0x8E, 0xE6, 0x9C]);
+console.log(decoder.write(buf1));
+// =&gt; 床前明
+var buf2 = new Buffer([0x88, 0xE5, 0x85, 0x89, 0xEF, 0xBC, 0x8C, 0xE7, 0x96, 0x91, 0xE6]);
+console.log(decoder.write(buf2));
+// =&gt; 月光，疑
+</code></pre></div><p>“月”字的前两个字节被保留在StringDecoder实例内部，第二次write()时，会将这2个剩余字节和后续11个字节组合在一起，再次用3的整数倍字节进行转码。</p> <p>string_decoder的局限性： 只能处理UTF-8、Base64和UCS-2/UTF-16LE这3种编码。</p> <h4 id="正确拼接buffer"><a href="#正确拼接buffer" class="header-anchor">#</a> 正确拼接Buffer</h4> <div class="language- extra-class"><pre class="language-text"><code>var chunks = [];
+var size = 0;
+res.on('data', function (chunk) {
+ chunks.push(chunk);
+ size += chunk.length;
+});
+res.on('end', function () {
+ var buf = Buffer.concat(chunks, size);
+ var str = iconv.decode(buf, 'utf8');
+ console.log(str);
+}); 
+</code></pre></div><p>正确的拼接方式是用一个数组来存储接收到的所有Buffer片段并记录下所有片段的总长度，然后调用Buffer.concat()方法生成一个合并的Buffer对象</p> <div class="language- extra-class"><pre class="language-text"><code>Buffer.concat = function(list, length) {
+ if (!Array.isArray(list)) {
+ throw new Error('Usage: Buffer.concat(list, [length])');
+ }
+ if (list.length === 0) {
+ return new Buffer(0);
+ } else if (list.length === 1) {
+ return list[0];
+ }
+ if (typeof length !== 'number') {
+ length = 0;
+ for (var i = 0; i &lt; list.length; i++) {
+ var buf = list[i];
+ length += buf.length;
+ }
+ }
+ var buffer = new Buffer(length);
+ var pos = 0;
+ for (var i = 0; i &lt; list.length; i++) {
+ var buf = list[i];
+ buf.copy(buffer, pos);
+ pos += buf.length;
+ }
+ return buffer;
+}; 
+</code></pre></div><h3 id="buffer-与性能"><a href="#buffer-与性能" class="header-anchor">#</a> Buffer 与性能</h3> <p>在应用中，我们通常会操作字符串，但一旦在网络中传输，都需要转换为Buffer，以进行二进制数据传输。在Web应用中，字符串转换到Buffer是时时刻刻发生的，提高字符串到Buffer的转换效率，可以很大程度地提高网络吞吐率。</p> <ul><li>文件读取
+Buffer的使用除了与字符串的转换有性能损耗外，在文件的读取时，有一个highWaterMark设置对性能的影响至关重要。
+在fs.createReadStream(path, opts)时，我们可以传入一些参数，代码如下:</li></ul> <div class="language- extra-class"><pre class="language-text"><code>{
+ flags: 'r',
+ encoding: null,
+ fd: null,
+ mode: 0666,
+ highWaterMark: 64 * 1024
+} 
+</code></pre></div><p>还可以传递start和end来指定读取文件的位置范围：</p> <div class="language- extra-class"><pre class="language-text"><code>{start: 90, end: 99}
+</code></pre></div><p>从这个Buffer中通过slice()方法取出部分数据作为一个小Buffer对象，再通过data事件传递给调用方。如果Buffer用完，则重新分配一个；如果还有剩余，则继续使用。下面为分配一个新的Buffer对象的操作：</p> <div class="language- extra-class"><pre class="language-text"><code>var pool;
+function allocNewPool(poolSize) {
+ pool = new Buffer(poolSize);
+ pool.used = 0;
+} 
+</code></pre></div><p>Node源代码中分配新的Buffer对象的判断条件如下所示：</p> <div class="language- extra-class"><pre class="language-text"><code>if (!pool || pool.length - pool.used &lt; kMinPoolSpace) {
+ // discard the old pool
+ pool = null;
+ allocNewPool(this._readableState.highWaterMark);
+}
+</code></pre></div><p>这里与Buffer的内存分配比较类似，highWaterMark的大小对性能有两个影响的点。</p> <ul><li>highWaterMark设置对Buffer内存的分配和使用有一定影响。</li> <li>highWaterMark设置过小，可能导致系统调用次数过多。</li></ul> <p>文件流读取基于Buffer分配，Buffer则基于SlowBuffer分配，这可以理解为两个维度的分配策
+略。如果文件较小（小于8 KB），有可能造成slab未能完全使用。</p> <p>由于fs.createReadStream()内部采用fs.read()实现，将会引起对磁盘的系统调用，对于大文件而言，highWaterMark的大小决定会触发系统调用和data事件的次数</p></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/4fe0f1/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">内存控制</div></a> <a href="/pages/3f10df/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">理论</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/4fe0f1/" class="prev">内存控制</a></span> <span class="next"><a href="/pages/3f10df/">理论</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/4fe0f1/"><div>
+            内存控制
+            <!----></div></a> <span class="date">05-03</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ec8dfa/"><div>
+            异步编程
+            <!----></div></a> <span class="date">05-03</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/1b14a3/"><div>
+            异步I/O操作
+            <!----></div></a> <span class="date">05-02</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:1730129114@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/wshuhua" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/my/m/music/playlist?id=7141103351" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Wsh  | <a href="https://github.com/wshuhua" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.713afd20.js" defer></script><script src="/assets/js/2.dc8a2400.js" defer></script><script src="/assets/js/20.d61f2e18.js" defer></script>
+  </body>
+</html>
