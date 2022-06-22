@@ -1,3 +1,5 @@
 # wshuhua.github.io
 
-今天也要加油🦆！
+![](/images/cat.png)
+
+想拥有哆来a梦的魔法口袋！！！
